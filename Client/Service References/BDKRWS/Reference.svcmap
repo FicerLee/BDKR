@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b3f0cce-e6cd-4980-bd8d-abefc689c365" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18198/BDKRWS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BDKRWS.disco" MetadataType="Disco" ID="36f45f11-0c46-4fd1-a8bd-6f7584ac7c78" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?disco" />
+    <MetadataFile FileName="BDKRWS.wsdl" MetadataType="Wsdl" ID="20d948d0-a878-4dd8-825f-01f4d7cb7d23" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?wsdl" />
+    <MetadataFile FileName="BDKRWS3.xsd" MetadataType="Schema" ID="fdbd2eeb-7c42-438f-a0ab-1840c036c123" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd3" />
+    <MetadataFile FileName="BDKRWS.xsd" MetadataType="Schema" ID="3331c873-8923-4a7e-8574-b7c0531996fd" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd2" />
+    <MetadataFile FileName="BDKRWS2.xsd" MetadataType="Schema" ID="fae9832a-f447-44fc-921b-5c776bf5af2c" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd1" />
+    <MetadataFile FileName="BDKRWS1.xsd" MetadataType="Schema" ID="7ae25fa2-469a-4a6b-bdf2-510923c87b05" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
