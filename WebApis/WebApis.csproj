@@ -134,9 +134,15 @@
     <Compile Include="Models\仓库信息.cs" />
     <Compile Include="Models\仓库类别.cs" />
     <Compile Include="Models\供应商信息.cs" />
+    <Compile Include="Models\员工信息.cs" />
     <Compile Include="Models\实时库存明细.cs" />
+    <Compile Include="Models\工资表.cs" />
+    <Compile Include="Models\收支费用流水明细清单.cs" />
+    <Compile Include="Models\收支费用流水清单.cs" />
     <Compile Include="Models\日常费用明细表.cs" />
     <Compile Include="Models\日常费用表.cs" />
+    <Compile Include="Models\流水科目.cs" />
+    <Compile Include="Models\流水类别.cs" />
     <Compile Include="Models\用户信息.cs" />
     <Compile Include="Models\菜品销售单.cs" />
     <Compile Include="Models\菜品销售单明细.cs" />

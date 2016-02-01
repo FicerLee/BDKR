@@ -20,8 +20,9 @@ namespace WebApis.Models
         public virtual List<采购进货单> 采购进货单List { get; set; }
         public virtual List<实时库存明细> 实时库存明细List { get; set; }
         public virtual List<菜品销售单> 菜品销售单List { get; set; }
-
         public virtual List<餐厅损益表> 餐厅损益表List { get; set; }
+        public virtual List<收支费用流水清单> 收支费用流水清单List { get; set; }
+        public virtual List<员工信息> 员工信息List { get; set; }
 
         internal 门店ViewModel ConvertToViewModel()
         {

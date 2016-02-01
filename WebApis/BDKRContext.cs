@@ -29,6 +29,16 @@ public class BDKRContext : DbContext
     public DbSet<餐厅损益表> 餐厅损益表S { get; set; }
     public DbSet<餐厅损益表明细> 餐厅损益表明细S { get; set; }
 
+    public DbSet<日常费用表> 日常费用表S { get; set; }
+    public DbSet<日常费用明细表> 日常费用明细表S { get; set; }
+
+    public DbSet<收支费用流水清单> 收支费用流水清单S { get; set; }
+    public DbSet<收支费用流水明细清单> 收支费用流水明细清单S { get; set; }
+    public DbSet<流水科目> 流水科目S { get; set; }
+    public DbSet<流水类别> 流水类别S { get; set; }
+    public DbSet<员工信息> 员工信息S { get; set; }
+    public DbSet<工资表> 工资表S { get; set; }
+
     #endregion
 
     public BDKRContext() : base("BDKRConnection")
@@ -177,6 +187,11 @@ public class BDKRContext : DbContext
             .WithRequired(t => t.门店信息)
             .HasForeignKey(t => t.门店编码)
             .WillCascadeOnDelete(false);
+        mb.Entity<门店信息>()
+            .HasMany(t => t.员工信息List)
+            .WithRequired(t => t.门店信息)
+            .HasForeignKey(t => t.门店编码)
+            .WillCascadeOnDelete(false);
         #endregion
 
         #region 实时库存信息
@@ -272,6 +287,185 @@ public class BDKRContext : DbContext
             .HasPrecision(18, 4);
         mb.Entity<餐厅损益表明细>()
             .Property(t => t.餐厅资金)
+            .HasPrecision(18, 4);
+        #endregion
+
+        #region 日常费用表
+        mb.Entity<日常费用表>()
+            .HasMany(t => t.日常费用明细List)
+            .WithRequired(t => t.日常费用表)
+            .HasForeignKey(t => t.日常费用表编码)
+            .WillCascadeOnDelete(false);
+        #endregion
+
+        #region 日常费用表明细
+        mb.Entity<日常费用明细表>()
+            .Property(t => t.书报杂志)
+            .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.交通费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.交际应酬费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.低值易耗品摊销)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.促销费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.保险费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.修理费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.其他费用)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.其他费用1)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.其他资产摊销)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.养路费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.劳务费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.劳动保护费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.工会经费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.差旅费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.市场调查费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.广告费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.折旧费用)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.文具印刷费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.无形资产摊销)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.样品费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.水电费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.燃料费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.物料损耗)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.环境保护费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.研究发展费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.职工培训费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.职工福利费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.薪资)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.试验检验费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.运输费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.邮电费)
+           .HasPrecision(18, 4);
+        mb.Entity<日常费用明细表>()
+           .Property(t => t.餐厅租金)
+           .HasPrecision(18, 4);
+        #endregion
+
+        #region 收支费用流水清单
+        mb.Entity<收支费用流水清单>()
+            .HasMany(t => t.收支费用流水明细清单List)
+            .WithRequired(t => t.收支费用流水清单)
+            .HasForeignKey(t => t.收支费用流水清单编码)
+            .WillCascadeOnDelete(false);
+        #endregion
+
+        #region 流水科目
+        mb.Entity<流水科目>()
+            .HasMany(t => t.收支费用流水明细清单List)
+            .WithRequired(t => t.科目)
+            .HasForeignKey(t => t.流水科目编码)
+            .WillCascadeOnDelete(false);
+        #endregion
+
+        #region 流水类别
+        mb.Entity<流水类别>()
+            .HasMany(t => t.收支费用流水明细清单List)
+            .WithRequired(t => t.类别)
+            .HasForeignKey(t => t.流水类别编码)
+            .WillCascadeOnDelete(false);
+        #endregion
+
+        #region 收支费用流水明细清单
+        mb.Entity<收支费用流水明细清单>()
+            .Property(t => t.收支金额)
+            .HasPrecision(18, 4);
+        #endregion
+
+        #region 工资表
+        mb.Entity<工资表>()
+            .Property(t => t.基本工资)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.出勤天数)
+            .HasPrecision(18, 1);
+        mb.Entity<工资表>()
+            .Property(t => t.其他)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.奖励)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.工装扣款)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.工装返款)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.满勤奖)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.绩效工资)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.补贴)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.迟到早退)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.酒水)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.预支工资)
             .HasPrecision(18, 4);
         #endregion
 
