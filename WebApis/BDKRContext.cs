@@ -29,7 +29,6 @@ public class BDKRContext : DbContext
     public DbSet<餐厅损益表> 餐厅损益表S { get; set; }
     public DbSet<餐厅损益表明细> 餐厅损益表明细S { get; set; }
 
-    public DbSet<日常费用表> 日常费用表S { get; set; }
     public DbSet<日常费用明细表> 日常费用明细表S { get; set; }
 
     public DbSet<收支费用流水清单> 收支费用流水清单S { get; set; }
@@ -38,6 +37,8 @@ public class BDKRContext : DbContext
     public DbSet<流水类别> 流水类别S { get; set; }
     public DbSet<员工信息> 员工信息S { get; set; }
     public DbSet<工资表> 工资表S { get; set; }
+    public DbSet<费用汇总表> 费用汇总表S { get; set; }
+    public DbSet<费用汇总明细表> 费用汇总明细表S { get; set; }
 
     #endregion
 
@@ -192,6 +193,16 @@ public class BDKRContext : DbContext
             .WithRequired(t => t.门店信息)
             .HasForeignKey(t => t.门店编码)
             .WillCascadeOnDelete(false);
+        mb.Entity<门店信息>()
+            .HasMany(t => t.日常费用明细表List)
+            .WithRequired(t => t.门店信息)
+            .HasForeignKey(t => t.门店信息编码)
+            .WillCascadeOnDelete(false);
+        mb.Entity<门店信息>()
+            .HasMany(t => t.费用汇总表List)
+            .WithRequired(t => t.门店信息)
+            .HasForeignKey(t => t.门店编码)
+            .WillCascadeOnDelete(false);
         #endregion
 
         #region 实时库存信息
@@ -206,6 +217,16 @@ public class BDKRContext : DbContext
             .WillCascadeOnDelete(false);
         mb.Entity<用户信息>()
             .HasMany(t => t.采购进货单List)
+            .WithRequired(t => t.制单人)
+            .HasForeignKey(t => t.制单人编码)
+            .WillCascadeOnDelete(false);
+        mb.Entity<用户信息>()
+            .HasMany(t => t.收支费用流水明细清单List)
+            .WithRequired(t => t.制单员)
+            .HasForeignKey(t => t.制单员编码)
+            .WillCascadeOnDelete(false);
+        mb.Entity<用户信息>()
+            .HasMany(t => t.费用汇总表List)
             .WithRequired(t => t.制单人)
             .HasForeignKey(t => t.制单人编码)
             .WillCascadeOnDelete(false);
@@ -290,13 +311,6 @@ public class BDKRContext : DbContext
             .HasPrecision(18, 4);
         #endregion
 
-        #region 日常费用表
-        mb.Entity<日常费用表>()
-            .HasMany(t => t.日常费用明细List)
-            .WithRequired(t => t.日常费用表)
-            .HasForeignKey(t => t.日常费用表编码)
-            .WillCascadeOnDelete(false);
-        #endregion
 
         #region 日常费用表明细
         mb.Entity<日常费用明细表>()
@@ -466,6 +480,23 @@ public class BDKRContext : DbContext
             .HasPrecision(18, 4);
         mb.Entity<工资表>()
             .Property(t => t.预支工资)
+            .HasPrecision(18, 4);
+        mb.Entity<工资表>()
+            .Property(t => t.满勤天数)
+            .HasPrecision(18, 1);
+        #endregion
+
+        #region 费用汇总表
+        mb.Entity<费用汇总表>()
+            .HasMany(t => t.费用汇总明细表List)
+            .WithRequired(t => t.费用汇总表)
+            .HasForeignKey(t => t.汇总表编码)
+            .WillCascadeOnDelete(false);
+        #endregion
+
+        #region 费用汇总明细表
+        mb.Entity<费用汇总明细表>()
+            .Property(t => t.金额)
             .HasPrecision(18, 4);
         #endregion
 

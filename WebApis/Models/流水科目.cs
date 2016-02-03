@@ -11,6 +11,7 @@ namespace WebApis.Models
         [Key]
         public string 编码 { get; set; }
         public string 名称 { get; set; }
+        public string 拼音 { get; set; }
         public string 附加说明 { get; set; }
         public virtual List<收支费用流水明细清单> 收支费用流水明细清单List { get; set; }
     }

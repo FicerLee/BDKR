@@ -126,10 +126,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IBDKRWS.cs" />
-    <Compile Include="Migrations\201601260215522_bdkr.cs" />
-    <Compile Include="Migrations\201601260215522_bdkr.Designer.cs">
-      <DependentUpon>201601260215522_bdkr.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\仓库信息.cs" />
     <Compile Include="Models\仓库类别.cs" />
@@ -140,7 +136,6 @@
     <Compile Include="Models\收支费用流水明细清单.cs" />
     <Compile Include="Models\收支费用流水清单.cs" />
     <Compile Include="Models\日常费用明细表.cs" />
-    <Compile Include="Models\日常费用表.cs" />
     <Compile Include="Models\流水科目.cs" />
     <Compile Include="Models\流水类别.cs" />
     <Compile Include="Models\用户信息.cs" />
@@ -152,6 +147,8 @@
     <Compile Include="Models\货品价格.cs" />
     <Compile Include="Models\货品信息.cs" />
     <Compile Include="Models\货品类别.cs" />
+    <Compile Include="Models\费用汇总明细表.cs" />
+    <Compile Include="Models\费用汇总表.cs" />
     <Compile Include="Models\采购成本价格表.cs" />
     <Compile Include="Models\采购进货单.cs" />
     <Compile Include="Models\采购进货单明细.cs" />
@@ -181,11 +178,6 @@
       <Project>{0b1955bd-4d29-4c5d-8f39-b896a6518327}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601260215522_bdkr.resx">
-      <DependentUpon>201601260215522_bdkr.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

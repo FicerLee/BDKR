@@ -12,6 +12,7 @@ namespace WebApis.Models
         public string 编码 { get; set; }
         public string 员工编码 { get; set; }
         public decimal 基本工资 { get; set; }
+        public decimal 满勤天数 { get; set; }
         public decimal 出勤天数 { get; set; }
         public decimal 绩效工资 { get; set; }
         public decimal 满勤奖 { get; set; }

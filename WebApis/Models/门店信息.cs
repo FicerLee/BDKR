@@ -23,6 +23,8 @@ namespace WebApis.Models
         public virtual List<餐厅损益表> 餐厅损益表List { get; set; }
         public virtual List<收支费用流水清单> 收支费用流水清单List { get; set; }
         public virtual List<员工信息> 员工信息List { get; set; }
+        public virtual List<日常费用明细表> 日常费用明细表List { get; set; }
+        public virtual List<费用汇总表> 费用汇总表List { get; set; }
 
         internal 门店ViewModel ConvertToViewModel()
         {
