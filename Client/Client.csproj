@@ -88,6 +88,12 @@
     <Compile Include="EditForms\仓库EditForm.Designer.cs">
       <DependentUpon>仓库EditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditForms\门店信息EditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\门店信息EditForm.Designer.cs">
+      <DependentUpon>门店信息EditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditorHelper.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +146,9 @@
     <EmbeddedResource Include="EditForms\仓库EditForm.resx">
       <DependentUpon>仓库EditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\门店信息EditForm.resx">
+      <DependentUpon>门店信息EditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,9 +178,47 @@
       <DependentUpon>waitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\DataAccess.BOMDetailViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.BOMViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.BOMDetailEditModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.EditModels.仓库EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.仓库类别EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.供应商EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.员工信息EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.流水账清单EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.菜品信息EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.货品价格EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.货品信息EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.费用汇总表EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.采购进货单EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.采购进货单明细EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.销售价格EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.门店EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.仓库Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.员工信息Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.工资表Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.库存信息Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.损益表Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.日常费用Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.流水账明细Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.菜品信息Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.货品信息Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.Filters.费用汇总表Filter.datasource" />
+    <None Include="Properties\DataSources\DataAccess.LoginInfoModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.LoginModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.仓库ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.仓库类别ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.供应商ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.员工信息ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.工资表ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.库存信息ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.损益表ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.日常费用ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.流水账明细清单ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.菜品信息ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.货品信息ViewModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.费用汇总明细表ViewModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.门店ViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -212,6 +259,9 @@
     <None Include="Service References\BDKRWS\BDKRWS3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\BDKRWS\BDKRWS4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\BDKRWS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +272,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ControlLib\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

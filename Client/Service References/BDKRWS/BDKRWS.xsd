@@ -16,6 +16,55 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="门店ViewModel" nillable="true" type="tns:门店ViewModel" />
+  <xs:complexType name="ArrayOf员工信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="员工信息ViewModel" nillable="true" type="tns:员工信息ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf员工信息ViewModel" nillable="true" type="tns:ArrayOf员工信息ViewModel" />
+  <xs:complexType name="员工信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="入职日期" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="基本工资" type="xs:decimal" />
+      <xs:element minOccurs="0" name="姓名" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="工号" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="联系方式" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="身份证号" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="员工信息ViewModel" nillable="true" type="tns:员工信息ViewModel" />
+  <xs:complexType name="ArrayOf工资表ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="工资表ViewModel" nillable="true" type="tns:工资表ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf工资表ViewModel" nillable="true" type="tns:ArrayOf工资表ViewModel" />
+  <xs:complexType name="工资表ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="其他" type="xs:decimal" />
+      <xs:element minOccurs="0" name="出勤天数" type="xs:decimal" />
+      <xs:element minOccurs="0" name="员工姓名" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="基本工资" type="xs:decimal" />
+      <xs:element minOccurs="0" name="奖励" type="xs:decimal" />
+      <xs:element minOccurs="0" name="工号" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="工装扣款" type="xs:decimal" />
+      <xs:element minOccurs="0" name="工装返款" type="xs:decimal" />
+      <xs:element minOccurs="0" name="满勤天数" type="xs:decimal" />
+      <xs:element minOccurs="0" name="满勤奖" type="xs:decimal" />
+      <xs:element minOccurs="0" name="绩效" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="职位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="补贴" type="xs:decimal" />
+      <xs:element minOccurs="0" name="迟到早退" type="xs:decimal" />
+      <xs:element minOccurs="0" name="酒水" type="xs:decimal" />
+      <xs:element minOccurs="0" name="预支工资" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="工资表ViewModel" nillable="true" type="tns:工资表ViewModel" />
   <xs:complexType name="ArrayOf仓库ViewModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="仓库ViewModel" nillable="true" type="tns:仓库ViewModel" />
@@ -32,4 +81,203 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="仓库ViewModel" nillable="true" type="tns:仓库ViewModel" />
+  <xs:complexType name="ArrayOf流水账明细清单ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="流水账明细清单ViewModel" nillable="true" type="tns:流水账明细清单ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf流水账明细清单ViewModel" nillable="true" type="tns:ArrayOf流水账明细清单ViewModel" />
+  <xs:complexType name="流水账明细清单ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="收入支出" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="是否有单据" type="xs:boolean" />
+      <xs:element minOccurs="0" name="是否核对" type="xs:boolean" />
+      <xs:element minOccurs="0" name="流水账清单编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="消费事由" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="科目" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="类别" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="记账日期" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="流水账明细清单ViewModel" nillable="true" type="tns:流水账明细清单ViewModel" />
+  <xs:complexType name="ArrayOf费用汇总明细表ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="费用汇总明细表ViewModel" nillable="true" type="tns:费用汇总明细表ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf费用汇总明细表ViewModel" nillable="true" type="tns:ArrayOf费用汇总明细表ViewModel" />
+  <xs:complexType name="费用汇总明细表ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="科目名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="类别名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="金额" type="xs:decimal" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="项目名称" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="费用汇总明细表ViewModel" nillable="true" type="tns:费用汇总明细表ViewModel" />
+  <xs:complexType name="ArrayOf日常费用ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="日常费用ViewModel" nillable="true" type="tns:日常费用ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf日常费用ViewModel" nillable="true" type="tns:ArrayOf日常费用ViewModel" />
+  <xs:complexType name="日常费用ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="书报杂志" type="xs:decimal" />
+      <xs:element minOccurs="0" name="交通费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="交际应酬费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="低值易耗品摊销" type="xs:decimal" />
+      <xs:element minOccurs="0" name="促销费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="保险费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="修理费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="其他费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="其他费用1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="其他资产摊销" type="xs:decimal" />
+      <xs:element minOccurs="0" name="养路费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="劳务费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="劳动保护费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="工会经费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="差旅费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="市场调查费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="广告费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="折旧费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="文具印刷费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="无形资产摊销" type="xs:decimal" />
+      <xs:element minOccurs="0" name="日常费用表编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="样品费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="水电费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="燃料费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="物料损耗" type="xs:decimal" />
+      <xs:element minOccurs="0" name="环境保护费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="研究发展费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="统计年度" type="xs:int" />
+      <xs:element minOccurs="0" name="统计月份" type="xs:int" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="职工培训费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="职工福利费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="薪资" type="xs:decimal" />
+      <xs:element minOccurs="0" name="试验检验费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="运输费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="邮电费" type="xs:decimal" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="餐厅租金" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="日常费用ViewModel" nillable="true" type="tns:日常费用ViewModel" />
+  <xs:complexType name="ArrayOf损益表ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="损益表ViewModel" nillable="true" type="tns:损益表ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf损益表ViewModel" nillable="true" type="tns:ArrayOf损益表ViewModel" />
+  <xs:complexType name="损益表ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="人事费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="促销费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="其他业务支出" type="xs:decimal" />
+      <xs:element minOccurs="0" name="其他业务收入" type="xs:decimal" />
+      <xs:element minOccurs="0" name="其他摊提" type="xs:decimal" />
+      <xs:element minOccurs="0" name="广告费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="折旧费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="营业税金" type="xs:decimal" />
+      <xs:element minOccurs="0" name="营运费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="行政费用" type="xs:decimal" />
+      <xs:element minOccurs="0" name="销售成本" type="xs:decimal" />
+      <xs:element minOccurs="0" name="销售收入" type="xs:decimal" />
+      <xs:element minOccurs="0" name="餐厅资金" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="损益表ViewModel" nillable="true" type="tns:损益表ViewModel" />
+  <xs:complexType name="ArrayOf货品信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="货品信息ViewModel" nillable="true" type="tns:货品信息ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf货品信息ViewModel" nillable="true" type="tns:ArrayOf货品信息ViewModel" />
+  <xs:complexType name="货品信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="最近采购价格" type="xs:decimal" />
+      <xs:element minOccurs="0" name="最近销售价格" type="xs:decimal" />
+      <xs:element minOccurs="0" name="类别名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="货品信息ViewModel" nillable="true" type="tns:货品信息ViewModel" />
+  <xs:complexType name="ArrayOfBOMDetailViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BOMDetailViewModel" nillable="true" type="tns:BOMDetailViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBOMDetailViewModel" nillable="true" type="tns:ArrayOfBOMDetailViewModel" />
+  <xs:complexType name="BOMDetailViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="单份数量" type="xs:decimal" />
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BOMDetailViewModel" nillable="true" type="tns:BOMDetailViewModel" />
+  <xs:complexType name="ArrayOf菜品信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="菜品信息ViewModel" nillable="true" type="tns:菜品信息ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf菜品信息ViewModel" nillable="true" type="tns:ArrayOf菜品信息ViewModel" />
+  <xs:complexType name="菜品信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Details" nillable="true" type="tns:ArrayOfBOMViewModel" />
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="当前销售单价" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="菜品名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="菜品类别" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="菜品信息ViewModel" nillable="true" type="tns:菜品信息ViewModel" />
+  <xs:complexType name="ArrayOfBOMViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BOMViewModel" nillable="true" type="tns:BOMViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBOMViewModel" nillable="true" type="tns:ArrayOfBOMViewModel" />
+  <xs:complexType name="BOMViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="单份数量" type="xs:int" />
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="原材料" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="成本价" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BOMViewModel" nillable="true" type="tns:BOMViewModel" />
+  <xs:complexType name="ArrayOf库存信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="库存信息ViewModel" nillable="true" type="tns:库存信息ViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf库存信息ViewModel" nillable="true" type="tns:ArrayOf库存信息ViewModel" />
+  <xs:complexType name="库存信息ViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="库存金额" type="xs:decimal" />
+      <xs:element minOccurs="0" name="当前库存数量" type="xs:decimal" />
+      <xs:element minOccurs="0" name="类别" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="库存信息ViewModel" nillable="true" type="tns:库存信息ViewModel" />
 </xs:schema>

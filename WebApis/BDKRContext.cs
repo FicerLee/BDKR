@@ -295,16 +295,10 @@ public class BDKRContext : DbContext
             .Property(t => t.行政费用)
             .HasPrecision(18, 4);
         mb.Entity<餐厅损益表明细>()
-            .Property(t => t.销售净额)
-            .HasPrecision(18, 4);
-        mb.Entity<餐厅损益表明细>()
             .Property(t => t.销售成本)
             .HasPrecision(18, 4);
         mb.Entity<餐厅损益表明细>()
             .Property(t => t.销售收入)
-            .HasPrecision(18, 4);
-        mb.Entity<餐厅损益表明细>()
-            .Property(t => t.销售毛利)
             .HasPrecision(18, 4);
         mb.Entity<餐厅损益表明细>()
             .Property(t => t.餐厅资金)

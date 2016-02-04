@@ -7,9 +7,9 @@ namespace DataAccess.EditModels
 {
     public enum ActionMode
     {
-        AddNew = 0,
-        Edit = 1,
-        Remove = 2,
-        View = 3
+        新增 = 0,
+        修改 = 1,
+        删除 = 2,
+        浏览 = 3
     }
 }

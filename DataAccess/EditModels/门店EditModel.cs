@@ -13,6 +13,7 @@ namespace DataAccess.EditModels
         public string 店长 { get; set; }
         public string 联系电话 { get; set; }
         public string 附加说明 { get; set; }
+        public ActionMode Action { get; set; }
 
     }
 }

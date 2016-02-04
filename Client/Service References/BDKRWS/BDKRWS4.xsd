@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataAccess.Filters" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataAccess.Filters" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="员工信息Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="员工信息Filter" nillable="true" type="tns:员工信息Filter" />
+  <xs:complexType name="Filter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="关键词" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Filter" nillable="true" type="tns:Filter" />
+  <xs:complexType name="工资表Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="开始年份" type="xs:int" />
+          <xs:element minOccurs="0" name="开始月份" type="xs:int" />
+          <xs:element minOccurs="0" name="结束年份" type="xs:int" />
+          <xs:element minOccurs="0" name="结束月份" type="xs:int" />
+          <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="工资表Filter" nillable="true" type="tns:工资表Filter" />
+  <xs:complexType name="仓库Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="仓库Filter" nillable="true" type="tns:仓库Filter" />
+  <xs:complexType name="流水账明细Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="科目编码" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="类别编码" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="记账开始日期" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="记账截止日期" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="流水账明细Filter" nillable="true" type="tns:流水账明细Filter" />
+  <xs:complexType name="费用汇总表Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="统计年份" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="统计月份" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="费用汇总表Filter" nillable="true" type="tns:费用汇总表Filter" />
+  <xs:complexType name="日常费用Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="统计年份" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="统计月份" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="门店信息编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="日常费用Filter" nillable="true" type="tns:日常费用Filter" />
+  <xs:complexType name="损益表Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="统计年份" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="统计月份" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="门店信息编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="损益表Filter" nillable="true" type="tns:损益表Filter" />
+  <xs:complexType name="货品信息Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="货品类别编码" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="门店信息编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="货品信息Filter" nillable="true" type="tns:货品信息Filter" />
+  <xs:complexType name="菜品信息Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="价格区间1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="价格区间2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="菜品类别编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="菜品信息Filter" nillable="true" type="tns:菜品信息Filter" />
+  <xs:complexType name="库存信息Filter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Filter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="货品类别编码" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="库存信息Filter" nillable="true" type="tns:库存信息Filter" />
+</xs:schema>

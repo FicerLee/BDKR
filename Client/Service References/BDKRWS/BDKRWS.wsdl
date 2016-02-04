@@ -5,7 +5,8 @@
       <xsd:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccess" />
-      <xsd:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DataAccess.Filters" />
+      <xsd:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" />
+      <xsd:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DataAccess.Filters" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IBDKRWS_门店信息_GetList_InputMessage">
@@ -13,6 +14,66 @@
   </wsdl:message>
   <wsdl:message name="IBDKRWS_门店信息_GetList_OutputMessage">
     <wsdl:part name="parameters" element="tns:门店信息_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_门店信息_AddNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:门店信息_AddNew" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_门店信息_AddNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:门店信息_AddNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_门店信息_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:门店信息_Update" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_门店信息_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:门店信息_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_门店信息_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:门店信息_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_门店信息_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:门店信息_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_AddNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_AddNew" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_AddNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_AddNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_Update" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_BatchImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_BatchImport" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_员工信息_BatchImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:员工信息_BatchImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_工资表_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:工资表_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_工资表_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:工资表_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_工资表_BatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:工资表_BatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_工资表_BatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:工资表_BatchUpdateResponse" />
   </wsdl:message>
   <wsdl:message name="IBDKRWS_仓库信息_GetList_InputMessage">
     <wsdl:part name="parameters" element="tns:仓库信息_GetList" />
@@ -26,10 +87,170 @@
   <wsdl:message name="IBDKRWS_仓库信息_CreateNewCode_OutputMessage">
     <wsdl:part name="parameters" element="tns:仓库信息_CreateNewCodeResponse" />
   </wsdl:message>
+  <wsdl:message name="IBDKRWS_仓库信息_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:仓库信息_Update" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_仓库信息_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:仓库信息_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_仓库信息_AddNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:仓库信息_AddNew" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_仓库信息_AddNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:仓库信息_AddNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_仓库信息_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:仓库信息_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_仓库信息_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:仓库信息_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_流水账明细清单_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:流水账明细清单_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_流水账明细清单_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:流水账明细清单_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_流水账明细清单_BatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:流水账明细清单_BatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_流水账明细清单_BatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:流水账明细清单_BatchUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_费用汇总明细表_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:费用汇总明细表_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_费用汇总明细表_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:费用汇总明细表_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_费用汇总明细表_BatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:费用汇总明细表_BatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_费用汇总明细表_BatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:费用汇总明细表_BatchUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_日常费用_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:日常费用_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_日常费用_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:日常费用_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_日常费用_BatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:日常费用_BatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_日常费用_BatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:日常费用_BatchUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_损益表_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:损益表_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_损益表_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:损益表_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_损益表_BatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:损益表_BatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_损益表_BatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:损益表_BatchUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_货品信息_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:货品信息_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_货品信息_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:货品信息_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_货品信息_AddNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:货品信息_AddNew" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_货品信息_AddNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:货品信息_AddNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_货品信息_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:货品信息_Update" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_货品信息_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:货品信息_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_GetNewCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_GetNewCode" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_GetNewCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_GetNewCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_AddNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_AddNew" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_AddNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_AddNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_Update" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_Delete" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_菜品信息_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:菜品信息_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_库存信息_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:库存信息_GetList" />
+  </wsdl:message>
+  <wsdl:message name="IBDKRWS_库存信息_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:库存信息_GetListResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBDKRWS">
     <wsdl:operation name="门店信息_GetList">
       <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_GetList" message="tns:IBDKRWS_门店信息_GetList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_GetListResponse" message="tns:IBDKRWS_门店信息_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="门店信息_AddNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_AddNew" message="tns:IBDKRWS_门店信息_AddNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_AddNewResponse" message="tns:IBDKRWS_门店信息_AddNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="门店信息_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_Update" message="tns:IBDKRWS_门店信息_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_UpdateResponse" message="tns:IBDKRWS_门店信息_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="门店信息_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_Delete" message="tns:IBDKRWS_门店信息_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/门店信息_DeleteResponse" message="tns:IBDKRWS_门店信息_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_GetList" message="tns:IBDKRWS_员工信息_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_GetListResponse" message="tns:IBDKRWS_员工信息_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_AddNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_AddNew" message="tns:IBDKRWS_员工信息_AddNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_AddNewResponse" message="tns:IBDKRWS_员工信息_AddNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_Update" message="tns:IBDKRWS_员工信息_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_UpdateResponse" message="tns:IBDKRWS_员工信息_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_Delete" message="tns:IBDKRWS_员工信息_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_DeleteResponse" message="tns:IBDKRWS_员工信息_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_BatchImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_BatchImport" message="tns:IBDKRWS_员工信息_BatchImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/员工信息_BatchImportResponse" message="tns:IBDKRWS_员工信息_BatchImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="工资表_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/工资表_GetList" message="tns:IBDKRWS_工资表_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/工资表_GetListResponse" message="tns:IBDKRWS_工资表_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="工资表_BatchUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/工资表_BatchUpdate" message="tns:IBDKRWS_工资表_BatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/工资表_BatchUpdateResponse" message="tns:IBDKRWS_工资表_BatchUpdate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="仓库信息_GetList">
       <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_GetList" message="tns:IBDKRWS_仓库信息_GetList_InputMessage" />
@@ -39,11 +260,181 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCode" message="tns:IBDKRWS_仓库信息_CreateNewCode_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCodeResponse" message="tns:IBDKRWS_仓库信息_CreateNewCode_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="仓库信息_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_Update" message="tns:IBDKRWS_仓库信息_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_UpdateResponse" message="tns:IBDKRWS_仓库信息_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="仓库信息_AddNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_AddNew" message="tns:IBDKRWS_仓库信息_AddNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_AddNewResponse" message="tns:IBDKRWS_仓库信息_AddNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="仓库信息_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_Delete" message="tns:IBDKRWS_仓库信息_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/仓库信息_DeleteResponse" message="tns:IBDKRWS_仓库信息_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="流水账明细清单_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/流水账明细清单_GetList" message="tns:IBDKRWS_流水账明细清单_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/流水账明细清单_GetListResponse" message="tns:IBDKRWS_流水账明细清单_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="流水账明细清单_BatchUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/流水账明细清单_BatchUpdate" message="tns:IBDKRWS_流水账明细清单_BatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/流水账明细清单_BatchUpdateResponse" message="tns:IBDKRWS_流水账明细清单_BatchUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="费用汇总明细表_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/费用汇总明细表_GetList" message="tns:IBDKRWS_费用汇总明细表_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/费用汇总明细表_GetListResponse" message="tns:IBDKRWS_费用汇总明细表_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="费用汇总明细表_BatchUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/费用汇总明细表_BatchUpdate" message="tns:IBDKRWS_费用汇总明细表_BatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/费用汇总明细表_BatchUpdateResponse" message="tns:IBDKRWS_费用汇总明细表_BatchUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="日常费用_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/日常费用_GetList" message="tns:IBDKRWS_日常费用_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/日常费用_GetListResponse" message="tns:IBDKRWS_日常费用_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="日常费用_BatchUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/日常费用_BatchUpdate" message="tns:IBDKRWS_日常费用_BatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/日常费用_BatchUpdateResponse" message="tns:IBDKRWS_日常费用_BatchUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="损益表_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/损益表_GetList" message="tns:IBDKRWS_损益表_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/损益表_GetListResponse" message="tns:IBDKRWS_损益表_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="损益表_BatchUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/损益表_BatchUpdate" message="tns:IBDKRWS_损益表_BatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/损益表_BatchUpdateResponse" message="tns:IBDKRWS_损益表_BatchUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="货品信息_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/货品信息_GetList" message="tns:IBDKRWS_货品信息_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/货品信息_GetListResponse" message="tns:IBDKRWS_货品信息_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="货品信息_AddNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/货品信息_AddNew" message="tns:IBDKRWS_货品信息_AddNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/货品信息_AddNewResponse" message="tns:IBDKRWS_货品信息_AddNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="货品信息_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/货品信息_Update" message="tns:IBDKRWS_货品信息_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/货品信息_UpdateResponse" message="tns:IBDKRWS_货品信息_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_GetList" message="tns:IBDKRWS_菜品信息_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_GetListResponse" message="tns:IBDKRWS_菜品信息_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_GetNewCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_GetNewCode" message="tns:IBDKRWS_菜品信息_GetNewCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_GetNewCodeResponse" message="tns:IBDKRWS_菜品信息_GetNewCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_AddNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_AddNew" message="tns:IBDKRWS_菜品信息_AddNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_AddNewResponse" message="tns:IBDKRWS_菜品信息_AddNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_Update" message="tns:IBDKRWS_菜品信息_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_UpdateResponse" message="tns:IBDKRWS_菜品信息_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_Delete" message="tns:IBDKRWS_菜品信息_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/菜品信息_DeleteResponse" message="tns:IBDKRWS_菜品信息_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="库存信息_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBDKRWS/库存信息_GetList" message="tns:IBDKRWS_库存信息_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBDKRWS/库存信息_GetListResponse" message="tns:IBDKRWS_库存信息_GetList_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBDKRWS" type="tns:IBDKRWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="门店信息_GetList">
       <soap:operation soapAction="http://tempuri.org/IBDKRWS/门店信息_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="门店信息_AddNew">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/门店信息_AddNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="门店信息_Update">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/门店信息_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="门店信息_Delete">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/门店信息_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/员工信息_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_AddNew">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/员工信息_AddNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_Update">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/员工信息_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_Delete">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/员工信息_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="员工信息_BatchImport">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/员工信息_BatchImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="工资表_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/工资表_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="工资表_BatchUpdate">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/工资表_BatchUpdate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -62,6 +453,186 @@
     </wsdl:operation>
     <wsdl:operation name="仓库信息_CreateNewCode">
       <soap:operation soapAction="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="仓库信息_Update">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/仓库信息_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="仓库信息_AddNew">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/仓库信息_AddNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="仓库信息_Delete">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/仓库信息_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="流水账明细清单_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/流水账明细清单_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="流水账明细清单_BatchUpdate">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/流水账明细清单_BatchUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="费用汇总明细表_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/费用汇总明细表_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="费用汇总明细表_BatchUpdate">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/费用汇总明细表_BatchUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="日常费用_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/日常费用_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="日常费用_BatchUpdate">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/日常费用_BatchUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="损益表_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/损益表_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="损益表_BatchUpdate">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/损益表_BatchUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="货品信息_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/货品信息_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="货品信息_AddNew">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/货品信息_AddNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="货品信息_Update">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/货品信息_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/菜品信息_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_GetNewCode">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/菜品信息_GetNewCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_AddNew">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/菜品信息_AddNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_Update">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/菜品信息_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="菜品信息_Delete">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/菜品信息_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="库存信息_GetList">
+      <soap:operation soapAction="http://tempuri.org/IBDKRWS/库存信息_GetList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,17 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataAccess.Filters" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataAccess.Filters" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="仓库Filter">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Filter">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="仓库Filter" nillable="true" type="tns:仓库Filter" />
-  <xs:complexType name="Filter">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18198/BDKRWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataAccess" />
+  <xs:complexType name="门店EditModel">
     <xs:sequence>
-      <xs:element minOccurs="0" name="关键词" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="店长" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="联系电话" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店地址" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Filter" nillable="true" type="tns:Filter" />
+  <xs:element name="门店EditModel" nillable="true" type="tns:门店EditModel" />
+  <xs:complexType name="员工信息EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="入职日期" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="员工姓名" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="工号" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="当前基本工资" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="职位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="联系电话" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="身份证号" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="员工信息EditModel" nillable="true" type="tns:员工信息EditModel" />
+  <xs:complexType name="仓库EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" type="tns:ActionMode" />
+      <xs:element minOccurs="0" name="仓库名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="制品缓冲库" type="xs:boolean" />
+      <xs:element minOccurs="0" name="类别编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="仓库EditModel" nillable="true" type="tns:仓库EditModel" />
+  <xs:simpleType name="ActionMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AddNew" />
+      <xs:enumeration value="Edit" />
+      <xs:enumeration value="Remove" />
+      <xs:enumeration value="View" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionMode" nillable="true" type="tns:ActionMode" />
+  <xs:complexType name="流水账清单EditModel">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="Details" nillable="true" type="q1:ArrayOf流水账明细清单ViewModel" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="记账年份" type="xs:int" />
+      <xs:element minOccurs="0" name="记账月份" type="xs:int" />
+      <xs:element minOccurs="0" name="门店编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="流水账清单EditModel" nillable="true" type="tns:流水账清单EditModel" />
+  <xs:complexType name="ArrayOf费用汇总表EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="费用汇总表EditModel" nillable="true" type="tns:费用汇总表EditModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOf费用汇总表EditModel" nillable="true" type="tns:ArrayOf费用汇总表EditModel" />
+  <xs:complexType name="费用汇总表EditModel">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="Details" nillable="true" type="q2:ArrayOf费用汇总明细表ViewModel" />
+      <xs:element minOccurs="0" name="制单人编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="汇总年份" type="xs:int" />
+      <xs:element minOccurs="0" name="汇总月份" type="xs:int" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="费用汇总表EditModel" nillable="true" type="tns:费用汇总表EditModel" />
+  <xs:complexType name="货品信息EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格型号" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品类别" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品采购成本价" type="xs:decimal" />
+      <xs:element minOccurs="0" name="货品销售价" type="xs:decimal" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="配方明细清单" nillable="true" type="q3:ArrayOfBOMDetailViewModel" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="货品信息EditModel" nillable="true" type="tns:货品信息EditModel" />
+  <xs:complexType name="菜品信息EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" type="tns:ActionMode" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="Details" nillable="true" type="q4:ArrayOfBOMDetailViewModel" />
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="当前销售价格" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="菜品名称" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="菜品类别" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="菜品信息EditModel" nillable="true" type="tns:菜品信息EditModel" />
 </xs:schema>

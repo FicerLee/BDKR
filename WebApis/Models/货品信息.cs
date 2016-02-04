@@ -15,6 +15,8 @@ namespace WebApis.Models
         public string 拼音 { get; set; }
         public string 备注 { get; set; }
         public string 单位 { get; set; }
+        public string 规格 { get; set; }
+        public bool 是否菜品 { get; set; }
 
         public string 货品价格编码 { get; set; }
         public virtual List<货品BOM> 货品BOMList { get; set; }

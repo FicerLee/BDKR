@@ -13,9 +13,8 @@ namespace WebApis.Models
         public string 餐厅损益表编码 { get; set; }
         public decimal 销售收入 { get; set; }
         public decimal 营业税金 { get; set; }
-        public decimal 销售净额 { get; set; }
+        public decimal 折旧费用 { get; set; }
         public decimal 销售成本 { get; set; }
-        public decimal 销售毛利 { get; set; }
         public decimal 人事费用 { get; set; }
         public decimal 营运费用 { get; set; }
         public decimal 行政费用 { get; set; }

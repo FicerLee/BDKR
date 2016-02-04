@@ -22,9 +22,11 @@ namespace WebApis
         [OperationContract]
         void 门店信息_AddNew(门店EditModel model);
         [OperationContract]
-        void 门店信息_Edit(门店EditModel model);
+        void 门店信息_Update(门店EditModel model);
         [OperationContract]
-        void 门店信息_Remove(string 门店编码);
+        void 门店信息_Delete(string 门店编码);
+        [OperationContract]
+        string 门店信息_GetNewCode();
 
         #endregion
 
@@ -34,16 +36,19 @@ namespace WebApis
         [OperationContract]
         void 员工信息_AddNew(员工信息EditModel model);
         [OperationContract]
-        void 员工信息_Edit(员工信息EditModel model);
+        void 员工信息_Update(员工信息EditModel model);
         [OperationContract]
-        void 员工信息_Remove(string 员工信息编码);
+        void 员工信息_Delete(string 员工信息编码);
         [OperationContract]
         int 员工信息_BatchImport(员工信息EditModel model);
+        [OperationContract]
+        string 员工信息_GetNewCode();
         #endregion
 
         #region 工资单
         [OperationContract]
         List<工资表ViewModel> 工资表_GetList(工资表Filter filter);
+        [OperationContract]
         int 工资表_BatchUpdate(List<工资表ViewModel> list);
         #endregion
 
@@ -51,7 +56,13 @@ namespace WebApis
         [OperationContract]
         List<仓库ViewModel> 仓库信息_GetList(仓库Filter filter);
         [OperationContract]
-        string 仓库信息_CreateNewCode();
+        string 仓库信息_GetNewCode();
+        [OperationContract]
+        int 仓库信息_Update(仓库EditModel model);
+        [OperationContract]
+        int 仓库信息_AddNew(仓库EditModel model);
+        [OperationContract]
+        int 仓库信息_Delete(string 仓库信息编码);
         #endregion
 
         #region 流水账清单
@@ -64,18 +75,54 @@ namespace WebApis
         #region 费用汇总表
         [OperationContract]
         List<费用汇总明细表ViewModel> 费用汇总明细表_GetList(费用汇总表Filter filter);
+        [OperationContract]
         int 费用汇总明细表_BatchUpdate(List<费用汇总表EditModel> model);
         #endregion
 
         #region 日常费用
         [OperationContract]
         List<日常费用ViewModel> 日常费用_GetList(日常费用Filter filter);
+        [OperationContract]
         int 日常费用_BatchUpdate(List<日常费用ViewModel> models);
         #endregion
 
         #region 损益表
         [OperationContract]
-        List<>
+        List<损益表ViewModel> 损益表_GetList(损益表Filter filter);
+        [OperationContract]
+        int 损益表_BatchUpdate(List<损益表ViewModel> models);
         #endregion
+
+        #region 货品表
+        [OperationContract]
+        List<货品信息ViewModel> 货品信息_GetList(货品信息Filter filter);
+        [OperationContract]
+        int 货品信息_AddNew(货品信息EditModel model);
+        [OperationContract]
+        int 货品信息_Update(货品信息EditModel model);
+        [OperationContract]
+        int 货品信息_Delete(string 货品信息编码);
+        [OperationContract]
+        string 货品信息_GetNewCode();
+        #endregion
+
+        #region 菜品信息
+        [OperationContract]
+        List<菜品信息ViewModel> 菜品信息_GetList(菜品信息Filter filter);
+        [OperationContract]
+        string 菜品信息_GetNewCode();
+        [OperationContract]
+        int 菜品信息_AddNew(菜品信息EditModel model);
+        [OperationContract]
+        int 菜品信息_Update(菜品信息EditModel model);
+        [OperationContract]
+        int 菜品信息_Delete(string 菜品信息编码);
+        #endregion
+
+        #region 库存信息
+        [OperationContract]
+        List<库存信息ViewModel> 库存信息_GetList(库存信息Filter filter);
+        #endregion
+
     }
 }

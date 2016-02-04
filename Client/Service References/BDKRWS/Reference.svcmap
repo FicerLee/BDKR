@@ -29,6 +29,7 @@
     <MetadataFile FileName="BDKRWS.xsd" MetadataType="Schema" ID="3331c873-8923-4a7e-8574-b7c0531996fd" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd2" />
     <MetadataFile FileName="BDKRWS2.xsd" MetadataType="Schema" ID="fae9832a-f447-44fc-921b-5c776bf5af2c" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd1" />
     <MetadataFile FileName="BDKRWS1.xsd" MetadataType="Schema" ID="7ae25fa2-469a-4a6b-bdf2-510923c87b05" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd0" />
+    <MetadataFile FileName="BDKRWS4.xsd" MetadataType="Schema" ID="6c196af2-01da-4cec-b561-f00e7451221b" SourceId="1" SourceUrl="http://localhost:18198/BDKRWS.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
