@@ -24,7 +24,7 @@ namespace Client.BLLs
             return new 仓库EditModel
             {
                 编码 = CreateNewCode(),
-                Action = ActionMode.AddNew
+                Action = ActionMode.新增
             };
         }
 

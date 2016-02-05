@@ -124,5 +124,9 @@ namespace WebApis
         List<库存信息ViewModel> 库存信息_GetList(库存信息Filter filter);
         #endregion
 
+        #region 采购订单
+
+        #endregion
+
     }
 }

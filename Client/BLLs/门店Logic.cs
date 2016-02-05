@@ -21,7 +21,7 @@ namespace Client.BLLs
         {
             using (var client = new BDKRWS.BDKRWSClient())
             {
-                return client.门店信息_GetList();
+                client.门店信息_AddNew(model);
             }
         }
 
@@ -29,15 +29,15 @@ namespace Client.BLLs
         {
             using (var client = new BDKRWS.BDKRWSClient())
             {
-                return client.门店信息_GetList();
+                client.门店信息_Update(model);
             }
         }
 
-        internal static void Delete(门店EditModel model)
+        internal static void Delete(string 门店信息编码)
         {
             using (var client = new BDKRWS.BDKRWSClient())
             {
-                return client.门店信息_GetList();
+                client.门店信息_Delete(门店信息编码);
             }
         }
     }

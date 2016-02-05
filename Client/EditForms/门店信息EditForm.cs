@@ -39,7 +39,7 @@ namespace Client.EditForms
                         门店Logic.Update(model);
                         break;
                     case ActionMode.删除:
-                        门店Logic.Delete(model);
+                        门店Logic.Delete(model.编码);
                         break;
                     case ActionMode.浏览:
                         break;
