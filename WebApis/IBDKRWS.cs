@@ -155,5 +155,12 @@ namespace WebApis
         string 销售价格_GetNewCode();
         #endregion
 
+        #region 货品BOM
+        [OperationContract]
+        string 货品BOM_GetNewCode();
+        [OperationContract]
+        int 货品BOM_AddNew(货品BOMEditModel model);
+        #endregion
+
     }
 }

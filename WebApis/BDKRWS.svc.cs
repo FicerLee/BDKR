@@ -503,6 +503,10 @@ namespace WebApis
                         _jg.AddNew(cj);
                     }
                     _count = r.AddNew(e);
+                    if (model.Details != null && model.Details.Count > 0)
+                    {
+                        var _bcode = 货品BOM_GetNewCode();
+                    }
                 }
                 ts.Complete();
             }
@@ -625,6 +629,19 @@ namespace WebApis
                 var maxcode = r.Max<string>(t => t.编码, t => t.编码.StartsWith("XJ")) ?? "XJ0000";
                 return "XJ" + (int.Parse(maxcode.Substring(2)) + 1).ToString("0000");
             }
+        }
+
+        #endregion
+
+        #region 货品BOM
+        public string 货品BOM_GetNewCode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int 货品BOM_AddNew(货品BOMEditModel model)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
