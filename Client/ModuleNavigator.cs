@@ -34,10 +34,11 @@ namespace Client
             //以上没问题
             if (firstshow)
             {
-                if (SplashScreenManager.Default == null)
-                {
-                    SplashScreenManager.ShowForm(this.Ribbon.FindForm(), typeof(waitForm), false, true);
-                }
+                SplashScreenManager.ShowForm(this.Ribbon.FindForm(), typeof(waitForm), false, true);
+                //if (SplashScreenManager.Default == null)
+                //{
+                //    SplashScreenManager.ShowForm(this.Ribbon.FindForm(), typeof(waitForm), false, true);
+                //}
                 var constructureInfo = navmoduleobject.ModuleType.GetConstructor(Type.EmptyTypes);
                 if (constructureInfo != null)
                 {

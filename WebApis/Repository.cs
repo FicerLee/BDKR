@@ -64,13 +64,13 @@ namespace WebApis
             return _context.SaveChanges();
         }
 
-        public void Remove(T t, Expression<Func<T, bool>> predicate = null)
+        public int Remove(T t, Expression<Func<T, bool>> predicate = null)
         {
             var _t = GetSingle(predicate);
             if (null == _t)
                 throw new Exception("该数据在当前数据库中并不存在,无法删除");
             _context.Set<T>().Remove(t);
-            _context.SaveChanges();
+            return _context.SaveChanges();
         }
 
         public int RemoveAll(Expression<Func<T, bool>> predicate = null)

@@ -11,7 +11,7 @@ namespace DataAccess
         public string 原材料 { get; set; }
         public string 单位 { get; set; }
         public string 规格 { get; set; }
-        public int 单份数量 { get; set; }
+        public decimal 单份数量 { get; set; }
         public decimal 成本价 { get; set; }
         public string 单份量 => string.Format(@"{0}/{1}", 单份数量, 单位);
     }

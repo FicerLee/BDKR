@@ -23,7 +23,7 @@ namespace Client
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            SplashScreenManager.ShowForm(null, typeof(ssWaiting), false, true, false, 1000);
+            //SplashScreenManager.ShowForm(null, typeof(ssWaiting), false, true, false, 1000);
             Application.Run(new Main());
         }
     }

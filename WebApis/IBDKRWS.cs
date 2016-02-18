@@ -128,5 +128,32 @@ namespace WebApis
 
         #endregion
 
+        #region 货品类别
+        [OperationContract]
+        List<货品类别ViewModel> 货品类别_GetList();
+        [OperationContract]
+        string 货品类别_GetNewCode();
+        [OperationContract]
+        int 货品类别_AddNew(货品类别EditModel model);
+        [OperationContract]
+        int 货品类别_Update(货品类别EditModel model);
+        [OperationContract]
+        int 货品类别_Delete(string 货品类别编码);
+        #endregion
+
+        #region 采购价格表
+        [OperationContract]
+        int 采购价格_AddNew(采购价格EditModel model);
+        [OperationContract]
+        string 采购价格_GetNewCode();
+        #endregion
+
+        #region 销售价格
+        [OperationContract]
+        int 销售价格_AddNew(销售价格EditModel model);
+        [OperationContract]
+        string 销售价格_GetNewCode();
+        #endregion
+
     }
 }

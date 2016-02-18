@@ -204,7 +204,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="最近采购价格" type="xs:decimal" />
-      <xs:element minOccurs="0" name="最近销售价格" type="xs:decimal" />
       <xs:element minOccurs="0" name="类别名称" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
@@ -212,22 +211,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="货品信息ViewModel" nillable="true" type="tns:货品信息ViewModel" />
-  <xs:complexType name="ArrayOfBOMDetailViewModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="BOMDetailViewModel" nillable="true" type="tns:BOMDetailViewModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfBOMDetailViewModel" nillable="true" type="tns:ArrayOfBOMDetailViewModel" />
-  <xs:complexType name="BOMDetailViewModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="单份数量" type="xs:decimal" />
-      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="BOMDetailViewModel" nillable="true" type="tns:BOMDetailViewModel" />
   <xs:complexType name="ArrayOf菜品信息ViewModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="菜品信息ViewModel" nillable="true" type="tns:菜品信息ViewModel" />
@@ -262,6 +245,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BOMViewModel" nillable="true" type="tns:BOMViewModel" />
+  <xs:complexType name="ArrayOfBOMDetailViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BOMDetailViewModel" nillable="true" type="tns:BOMDetailViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBOMDetailViewModel" nillable="true" type="tns:ArrayOfBOMDetailViewModel" />
+  <xs:complexType name="BOMDetailViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="单份数量" type="xs:decimal" />
+      <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BOMDetailViewModel" nillable="true" type="tns:BOMDetailViewModel" />
   <xs:complexType name="ArrayOf库存信息ViewModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="库存信息ViewModel" nillable="true" type="tns:库存信息ViewModel" />

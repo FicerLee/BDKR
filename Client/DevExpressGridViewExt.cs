@@ -18,6 +18,8 @@ namespace Client
             gv.OptionsView.EnableAppearanceEvenRow = config.EnableAppearanceEvenRow;
             gv.OptionsView.EnableAppearanceOddRow = config.EnableAppearanceOddRow;
             gv.RowHeight = config.RowHeight;
+            gv.GridControl.UseEmbeddedNavigator = config.ShowNavigator;
+
         }
     }
 
@@ -29,5 +31,6 @@ namespace Client
         public bool EnableAppearanceOddRow { get; set; } = true;
         public int RowHeight { get; set; } = 25;
         public bool AutoPopulateColumns = false;
+        public bool ShowNavigator { get; set; } = true;
     }
 }

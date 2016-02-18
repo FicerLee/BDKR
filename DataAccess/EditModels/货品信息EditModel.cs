@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
@@ -30,12 +31,11 @@ namespace DataAccess.EditModels
         public string 单位 { get; set; }
         public string 货品类别 { get; set; }
         public decimal 货品采购成本价 { get; set; }
-        public decimal 货品销售价 { get; set; }
 
         public string 附加说明 { get; set; }
 
-        public List<BOMDetailViewModel> 配方明细清单 { get; set; }
-
+        [Display(AutoGenerateField = false)]
+        public ActionMode Action { get; set; }
 
         private void OnPropertyChanged(string propertyname)
         {

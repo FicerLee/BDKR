@@ -9,6 +9,7 @@ namespace DataAccess
     {
         public string 编码 { get; set; }
         public string 菜品名称 { get; set; }
+        public string 规格 { get; set; }
         public string 单位 { get; set; }
         public decimal 当前销售单价 { get; set; }
         public string 菜品类别 { get; set; }

@@ -35,14 +35,15 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.nbcMain = new DevExpress.XtraNavBar.NavBarControl();
-            this.nbgUsers = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiUserList = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgBase = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbi门店Info = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiStoreInfo = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiMaterialInfo = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiDishInfo = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbgUsers = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiUserList = new DevExpress.XtraNavBar.NavBarItem();
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
-            this.nbi门店Info = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbi员工Info = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.rcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nbcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcMain)).BeginInit();
@@ -114,7 +115,8 @@
             this.nbiMaterialInfo,
             this.nbiDishInfo,
             this.nbiUserList,
-            this.nbi门店Info});
+            this.nbi门店Info,
+            this.nbi员工Info});
             this.nbcMain.Location = new System.Drawing.Point(0, 151);
             this.nbcMain.Name = "nbcMain";
             this.nbcMain.OptionsNavPane.ExpandedWidth = 195;
@@ -123,6 +125,40 @@
             this.nbcMain.TabIndex = 1;
             this.nbcMain.Text = "navBarControl1";
             this.nbcMain.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbcMain_LinkClicked);
+            // 
+            // nbgBase
+            // 
+            this.nbgBase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.nbgBase.Appearance.Options.UseFont = true;
+            this.nbgBase.Caption = "基本资料";
+            this.nbgBase.Expanded = true;
+            this.nbgBase.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbi员工Info),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbi门店Info),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiStoreInfo),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiMaterialInfo),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDishInfo)});
+            this.nbgBase.Name = "nbgBase";
+            // 
+            // nbi门店Info
+            // 
+            this.nbi门店Info.Caption = "门店管理";
+            this.nbi门店Info.Name = "nbi门店Info";
+            // 
+            // nbiStoreInfo
+            // 
+            this.nbiStoreInfo.Caption = "仓库资料管理";
+            this.nbiStoreInfo.Name = "nbiStoreInfo";
+            // 
+            // nbiMaterialInfo
+            // 
+            this.nbiMaterialInfo.Caption = "货品信息维护";
+            this.nbiMaterialInfo.Name = "nbiMaterialInfo";
+            // 
+            // nbiDishInfo
+            // 
+            this.nbiDishInfo.Caption = "菜品维护";
+            this.nbiDishInfo.Name = "nbiDishInfo";
             // 
             // nbgUsers
             // 
@@ -138,34 +174,6 @@
             this.nbiUserList.Caption = "用户管理";
             this.nbiUserList.Name = "nbiUserList";
             // 
-            // nbgBase
-            // 
-            this.nbgBase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.nbgBase.Appearance.Options.UseFont = true;
-            this.nbgBase.Caption = "基本资料";
-            this.nbgBase.Expanded = true;
-            this.nbgBase.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbi门店Info),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiStoreInfo),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiMaterialInfo),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDishInfo)});
-            this.nbgBase.Name = "nbgBase";
-            // 
-            // nbiStoreInfo
-            // 
-            this.nbiStoreInfo.Caption = "仓库资料管理";
-            this.nbiStoreInfo.Name = "nbiStoreInfo";
-            // 
-            // nbiMaterialInfo
-            // 
-            this.nbiMaterialInfo.Caption = "原材料信息维护";
-            this.nbiMaterialInfo.Name = "nbiMaterialInfo";
-            // 
-            // nbiDishInfo
-            // 
-            this.nbiDishInfo.Caption = "菜品维护";
-            this.nbiDishInfo.Name = "nbiDishInfo";
-            // 
             // pcMain
             // 
             this.pcMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -174,10 +182,10 @@
             this.pcMain.Size = new System.Drawing.Size(689, 327);
             this.pcMain.TabIndex = 3;
             // 
-            // nbi门店Info
+            // nbi员工Info
             // 
-            this.nbi门店Info.Caption = "门店管理";
-            this.nbi门店Info.Name = "nbi门店Info";
+            this.nbi员工Info.Caption = "员工信息";
+            this.nbi员工Info.Name = "nbi员工Info";
             // 
             // Main
             // 
@@ -217,6 +225,7 @@
         private DevExpress.XtraNavBar.NavBarGroup nbgUsers;
         private DevExpress.XtraNavBar.NavBarItem nbiUserList;
         private DevExpress.XtraNavBar.NavBarItem nbi门店Info;
+        private DevExpress.XtraNavBar.NavBarItem nbi员工Info;
     }
 }
 

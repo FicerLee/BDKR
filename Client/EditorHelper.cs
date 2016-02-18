@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Repository;
 using Client.BLLs;
+using DevExpress.XtraEditors;
+using System.Drawing;
 
 namespace Client
 {
@@ -20,10 +22,42 @@ namespace Client
         {
             SplashScreenManager.ShowForm(parentForm, typeof(waitForm), false, false, false, false);
         }
+
+        internal static void CheckedComboBoxEditor_门店信息(RepositoryItemCheckedComboBoxEdit properties)
+        {
+            var list = 门店Logic.GetList();
+            properties.DataSource = list;
+            properties.ValueMember = "编码";
+            properties.DisplayMember = "门店名称";
+        }
+
+        internal static void LookUpEdit_货品类别(RepositoryItemLookUpEdit properties)
+        {
+            var list = 货品类别Logic.GetList();
+            properties.DataSource = list;
+            properties.ValueMember = "编码";
+            properties.DisplayMember = "类别编码";
+        }
+
         internal static void CloseWaitDialog()
         {
             SplashScreenManager.CloseForm(false);
         }
+
+        internal static void ShowErrorMsg(LabelControl labelControl1, string message)
+        {
+            labelControl1.Appearance.ForeColor = Color.Red;
+            labelControl1.Text = message;
+        }
+
+        internal static void CheckedComboBoxEditor_货品类别(RepositoryItemCheckedComboBoxEdit properties)
+        {
+            var list = 货品类别Logic.GetList();
+            properties.DataSource = list;
+            properties.ValueMember = "编码";
+            properties.DisplayMember = "类别名称";
+        }
+
 
         internal static DialogResult EditForm(仓库EditModel model)
         {

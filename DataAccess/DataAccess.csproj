@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Pinyin4net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\pinyin4net.1.0.0\lib\net40\Pinyin4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -58,8 +62,10 @@
     <Compile Include="EditModels\员工信息EditModel.cs" />
     <Compile Include="EditModels\流水账清单EditModel.cs" />
     <Compile Include="EditModels\菜品信息EditModel.cs" />
-    <Compile Include="EditModels\货品价格EditModel.cs" />
+    <Compile Include="EditModels\采购价格EditModel.cs" />
     <Compile Include="EditModels\货品信息EditModel.cs" />
+    <Compile Include="EditModels\货品类别EditModel.cs" />
+    <Compile Include="EditModels\货品类别ViewModel.cs" />
     <Compile Include="EditModels\费用汇总表EditModel.cs" />
     <Compile Include="EditModels\采购进货单EditModel.cs" />
     <Compile Include="EditModels\采购进货单明细EditModel.cs" />
@@ -79,6 +85,7 @@
     <Compile Include="LoginInfoModel.cs" />
     <Compile Include="LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilHelper.cs" />
     <Compile Include="仓库ViewModel.cs" />
     <Compile Include="仓库类别ViewModel.cs" />
     <Compile Include="供应商ViewModel.cs" />

@@ -23,8 +23,6 @@ public class BDKRContext : DbContext
     public DbSet<门店信息> 门店信息S { get; set; }
     public DbSet<实时库存明细> 实时库存明细S { get; set; }
     public DbSet<用户信息> 用户信息S { get; set; }
-
-    public DbSet<货品价格> 货品价格S { get; set; }
     public DbSet<销售价格表> 销售价格表S { get; set; }
     public DbSet<餐厅损益表> 餐厅损益表S { get; set; }
     public DbSet<餐厅损益表明细> 餐厅损益表明细S { get; set; }
@@ -39,6 +37,7 @@ public class BDKRContext : DbContext
     public DbSet<工资表> 工资表S { get; set; }
     public DbSet<费用汇总表> 费用汇总表S { get; set; }
     public DbSet<费用汇总明细表> 费用汇总明细表S { get; set; }
+    public DbSet<采购成本价格表> 采购价格表S { get; set; }
 
     #endregion
 
@@ -123,11 +122,6 @@ public class BDKRContext : DbContext
             .WithRequired(t => t.货品类别)
             .HasForeignKey(t => t.货品类别编码)
             .WillCascadeOnDelete(false);
-        mb.Entity<货品类别>()
-            .HasMany(t => t.Children)
-            .WithOptional(t => t.Parent)
-            .HasForeignKey(t => t.父类编码)
-            .WillCascadeOnDelete(false);
         #endregion
 
         #region 货品信息
@@ -157,9 +151,14 @@ public class BDKRContext : DbContext
             .HasForeignKey(t => t.货品信息编码)
             .WillCascadeOnDelete(false);
         mb.Entity<货品信息>()
-            .HasOptional(t => t.货品价格)
+            .HasMany(t => t.采购价格表List)
             .WithRequired(t => t.货品信息)
-            .Map(t => t.MapKey("货品编码"))
+            .HasForeignKey(t => t.货品信息编码)
+            .WillCascadeOnDelete(false);
+        mb.Entity<货品信息>()
+            .HasMany(t => t.销售价格表List)
+            .WithRequired(t => t.货品信息)
+            .HasForeignKey(t => t.货品信息编码)
             .WillCascadeOnDelete(false);
         #endregion
 
@@ -229,19 +228,6 @@ public class BDKRContext : DbContext
             .HasMany(t => t.费用汇总表List)
             .WithRequired(t => t.制单人)
             .HasForeignKey(t => t.制单人编码)
-            .WillCascadeOnDelete(false);
-        #endregion
-
-        #region 货品价格
-        mb.Entity<货品价格>()
-            .HasMany(t => t.采购价格表List)
-            .WithRequired(t => t.货品价格)
-            .HasForeignKey(t => t.货品价格编码)
-            .WillCascadeOnDelete(false);
-        mb.Entity<货品价格>()
-            .HasMany(t => t.销售价格表List)
-            .WithRequired(t => t.货品价格)
-            .HasForeignKey(t => t.货品价格编码)
             .WillCascadeOnDelete(false);
         #endregion
 

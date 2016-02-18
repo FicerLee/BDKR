@@ -32,7 +32,7 @@ namespace Client.BLLs
         {
             using (var client = new BDKRWS.BDKRWSClient())
             {
-                var newcode = client.仓库信息_CreateNewCode();
+                var newcode = client.仓库信息_GetNewCode();
                 return newcode;
             }
         }

@@ -46,6 +46,7 @@
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -74,6 +75,10 @@
     </Compile>
     <Compile Include="BLLs\LoginLogic.cs" />
     <Compile Include="BLLs\仓库Logic.cs" />
+    <Compile Include="BLLs\员工信息Logic.cs" />
+    <Compile Include="BLLs\菜品信息Logic.cs" />
+    <Compile Include="BLLs\货品信息Logic.cs" />
+    <Compile Include="BLLs\货品类别Logic.cs" />
     <Compile Include="BLLs\门店Logic.cs" />
     <Compile Include="DevExpressGridViewExt.cs" />
     <Compile Include="EditFormBase.cs">
@@ -87,6 +92,12 @@
     </Compile>
     <Compile Include="EditForms\仓库EditForm.Designer.cs">
       <DependentUpon>仓库EditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\货品EditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\货品EditForm.Designer.cs">
+      <DependentUpon>货品EditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditForms\门店信息EditForm.cs">
       <SubType>Form</SubType>
@@ -113,6 +124,24 @@
     </Compile>
     <Compile Include="Modules\仓库Module.Designer.cs">
       <DependentUpon>仓库Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\员工Module.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\员工Module.Designer.cs">
+      <DependentUpon>员工Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\菜品Module.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\菜品Module.Designer.cs">
+      <DependentUpon>菜品Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\货品Module.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\货品Module.Designer.cs">
+      <DependentUpon>货品Module.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\门店Module.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +175,9 @@
     <EmbeddedResource Include="EditForms\仓库EditForm.resx">
       <DependentUpon>仓库EditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\货品EditForm.resx">
+      <DependentUpon>货品EditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditForms\门店信息EditForm.resx">
       <DependentUpon>门店信息EditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +189,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\仓库Module.resx">
       <DependentUpon>仓库Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\员工Module.resx">
+      <DependentUpon>员工Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\菜品Module.resx">
+      <DependentUpon>菜品Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\货品Module.resx">
+      <DependentUpon>货品Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\门店Module.resx">
       <DependentUpon>门店Module.cs</DependentUpon>
@@ -189,6 +230,7 @@
     <None Include="Properties\DataSources\DataAccess.EditModels.菜品信息EditModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.EditModels.货品价格EditModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.EditModels.货品信息EditModel.datasource" />
+    <None Include="Properties\DataSources\DataAccess.EditModels.货品类别ViewModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.EditModels.费用汇总表EditModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.EditModels.采购进货单EditModel.datasource" />
     <None Include="Properties\DataSources\DataAccess.EditModels.采购进货单明细EditModel.datasource" />

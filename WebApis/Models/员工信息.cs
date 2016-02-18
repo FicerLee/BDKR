@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using DataAccess;
 
 namespace WebApis.Models
 {
@@ -21,5 +22,21 @@ namespace WebApis.Models
         public string 身份证号 { get; set; }
         public DateTime 入职日期 { get; set; }
         public virtual 门店信息 门店信息 { get; set; }
+
+        internal 员工信息ViewModel ConvertToViewModel()
+        {
+            return new 员工信息ViewModel
+            {
+                入职日期 = 入职日期,
+                基本工资 = 当前基本工资,
+                姓名 = 姓名,
+                工号 = 工号,
+                编码 = 编码,
+                联系方式 = 联系电话,
+                身份证号 = 身份证号,
+                门店编码 = 门店编码,
+                附加说明 = 附加说明
+            };
+        }
     }
 }

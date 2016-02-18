@@ -12,7 +12,6 @@ namespace DataAccess
         public string 类别名称 { get; set; }
         public string 规格 { get; set; }
         public string 单位 { get; set; }
-        public decimal 最近销售价格 { get; set; }
         public decimal 最近采购价格 { get; set; }
 
     }

@@ -92,8 +92,9 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Filter">
         <xs:sequence>
+          <xs:element minOccurs="0" name="价格区间1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="价格区间2" type="xs:decimal" />
           <xs:element minOccurs="0" name="货品类别编码" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="门店信息编码" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

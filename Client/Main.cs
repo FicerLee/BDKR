@@ -31,6 +31,8 @@ namespace Client
         {
             nbiStoreInfo.Tag = new NavModuleObject(nbiStoreInfo.Caption, typeof(仓库Module));
             nbi门店Info.Tag = new NavModuleObject(nbi门店Info.Caption, typeof(门店Module));
+            nbiMaterialInfo.Tag = new NavModuleObject(nbiMaterialInfo.Caption, typeof(货品Module));
+            nbi员工Info.Tag = new NavModuleObject(nbi员工Info.Caption, typeof(员工Module));
         }
 
         private void nbcMain_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

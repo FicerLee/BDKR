@@ -8,6 +8,7 @@ namespace DataAccess.Filters
     public class 货品信息Filter : Filter
     {
         public string 货品类别编码 { get; set; }
-        public string 门店信息编码 { get; set; }
+        public decimal 价格区间1 { get; set; }
+        public decimal 价格区间2 { get; set; }
     }
 }

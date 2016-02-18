@@ -10,11 +10,11 @@ namespace WebApis.Models
     {
         [Key]
         public string 编码 { get; set; }
-        public string 货品价格编码 { get; set; }
+        public string 货品信息编码 { get; set; }
         public decimal 价格 { get; set; }
         public DateTime 创建时间 { get; set; }
         public string 附加说明 { get; set; }
-        public virtual 货品价格 货品价格 { get; set; }
+        public virtual 货品信息 货品信息 { get; set; }
 
 
     }

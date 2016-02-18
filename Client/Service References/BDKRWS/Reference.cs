@@ -47,6 +47,14 @@ namespace Client.BDKRWS {
         
         void End门店信息_Delete(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/门店信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/门店信息_GetNewCodeResponse")]
+        string 门店信息_GetNewCode();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/门店信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/门店信息_GetNewCodeResponse")]
+        System.IAsyncResult Begin门店信息_GetNewCode(System.AsyncCallback callback, object asyncState);
+        
+        string End门店信息_GetNewCode(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/员工信息_GetList", ReplyAction="http://tempuri.org/IBDKRWS/员工信息_GetListResponse")]
         System.Collections.Generic.List<DataAccess.员工信息ViewModel> 员工信息_GetList(DataAccess.Filters.员工信息Filter filter);
         
@@ -87,6 +95,14 @@ namespace Client.BDKRWS {
         
         int End员工信息_BatchImport(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/员工信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/员工信息_GetNewCodeResponse")]
+        string 员工信息_GetNewCode();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/员工信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/员工信息_GetNewCodeResponse")]
+        System.IAsyncResult Begin员工信息_GetNewCode(System.AsyncCallback callback, object asyncState);
+        
+        string End员工信息_GetNewCode(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/工资表_GetList", ReplyAction="http://tempuri.org/IBDKRWS/工资表_GetListResponse")]
         System.Collections.Generic.List<DataAccess.工资表ViewModel> 工资表_GetList(DataAccess.Filters.工资表Filter filter);
         
@@ -111,13 +127,13 @@ namespace Client.BDKRWS {
         
         System.Collections.Generic.List<DataAccess.仓库ViewModel> End仓库信息_GetList(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCode", ReplyAction="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCodeResponse")]
-        string 仓库信息_CreateNewCode();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/仓库信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/仓库信息_GetNewCodeResponse")]
+        string 仓库信息_GetNewCode();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCode", ReplyAction="http://tempuri.org/IBDKRWS/仓库信息_CreateNewCodeResponse")]
-        System.IAsyncResult Begin仓库信息_CreateNewCode(System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/仓库信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/仓库信息_GetNewCodeResponse")]
+        System.IAsyncResult Begin仓库信息_GetNewCode(System.AsyncCallback callback, object asyncState);
         
-        string End仓库信息_CreateNewCode(System.IAsyncResult result);
+        string End仓库信息_GetNewCode(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/仓库信息_Update", ReplyAction="http://tempuri.org/IBDKRWS/仓库信息_UpdateResponse")]
         int 仓库信息_Update(DataAccess.EditModels.仓库EditModel model);
@@ -231,6 +247,22 @@ namespace Client.BDKRWS {
         
         int End货品信息_Update(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品信息_Delete", ReplyAction="http://tempuri.org/IBDKRWS/货品信息_DeleteResponse")]
+        int 货品信息_Delete(string 货品信息编码);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品信息_Delete", ReplyAction="http://tempuri.org/IBDKRWS/货品信息_DeleteResponse")]
+        System.IAsyncResult Begin货品信息_Delete(string 货品信息编码, System.AsyncCallback callback, object asyncState);
+        
+        int End货品信息_Delete(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/货品信息_GetNewCodeResponse")]
+        string 货品信息_GetNewCode();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品信息_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/货品信息_GetNewCodeResponse")]
+        System.IAsyncResult Begin货品信息_GetNewCode(System.AsyncCallback callback, object asyncState);
+        
+        string End货品信息_GetNewCode(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/菜品信息_GetList", ReplyAction="http://tempuri.org/IBDKRWS/菜品信息_GetListResponse")]
         System.Collections.Generic.List<DataAccess.菜品信息ViewModel> 菜品信息_GetList(DataAccess.Filters.菜品信息Filter filter);
         
@@ -278,6 +310,46 @@ namespace Client.BDKRWS {
         System.IAsyncResult Begin库存信息_GetList(DataAccess.Filters.库存信息Filter filter, System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.List<DataAccess.库存信息ViewModel> End库存信息_GetList(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品类别_GetList", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_GetListResponse")]
+        System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel> 货品类别_GetList();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品类别_GetList", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_GetListResponse")]
+        System.IAsyncResult Begin货品类别_GetList(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel> End货品类别_GetList(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品类别_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_GetNewCodeResponse")]
+        string 货品类别_GetNewCode();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品类别_GetNewCode", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_GetNewCodeResponse")]
+        System.IAsyncResult Begin货品类别_GetNewCode(System.AsyncCallback callback, object asyncState);
+        
+        string End货品类别_GetNewCode(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品类别_AddNew", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_AddNewResponse")]
+        int 货品类别_AddNew(DataAccess.EditModels.货品类别EditModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品类别_AddNew", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_AddNewResponse")]
+        System.IAsyncResult Begin货品类别_AddNew(DataAccess.EditModels.货品类别EditModel model, System.AsyncCallback callback, object asyncState);
+        
+        int End货品类别_AddNew(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品类别_Update", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_UpdateResponse")]
+        int 货品类别_Update(DataAccess.EditModels.货品类别EditModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品类别_Update", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_UpdateResponse")]
+        System.IAsyncResult Begin货品类别_Update(DataAccess.EditModels.货品类别EditModel model, System.AsyncCallback callback, object asyncState);
+        
+        int End货品类别_Update(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBDKRWS/货品类别_Delete", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_DeleteResponse")]
+        int 货品类别_Delete(string 货品类别编码);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IBDKRWS/货品类别_Delete", ReplyAction="http://tempuri.org/IBDKRWS/货品类别_DeleteResponse")]
+        System.IAsyncResult Begin货品类别_Delete(string 货品类别编码, System.AsyncCallback callback, object asyncState);
+        
+        int End货品类别_Delete(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -299,6 +371,25 @@ namespace Client.BDKRWS {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.Generic.List<DataAccess.门店ViewModel>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 门店信息_GetNewCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 门店信息_GetNewCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -337,6 +428,25 @@ namespace Client.BDKRWS {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 员工信息_GetNewCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 员工信息_GetNewCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -400,11 +510,11 @@ namespace Client.BDKRWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class 仓库信息_CreateNewCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class 仓库信息_GetNewCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public 仓库信息_CreateNewCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public 仓库信息_GetNewCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -685,6 +795,44 @@ namespace Client.BDKRWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品信息_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品信息_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品信息_GetNewCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品信息_GetNewCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class 菜品信息_GetListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -799,6 +947,101 @@ namespace Client.BDKRWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品类别_GetListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品类别_GetListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品类别_GetNewCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品类别_GetNewCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品类别_AddNewCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品类别_AddNewCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品类别_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品类别_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class 货品类别_DeleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public 货品类别_DeleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class BDKRWSClient : System.ServiceModel.ClientBase<Client.BDKRWS.IBDKRWS>, Client.BDKRWS.IBDKRWS {
         
         private BeginOperationDelegate onBegin门店信息_GetListDelegate;
@@ -824,6 +1067,12 @@ namespace Client.BDKRWS {
         private EndOperationDelegate onEnd门店信息_DeleteDelegate;
         
         private System.Threading.SendOrPostCallback on门店信息_DeleteCompletedDelegate;
+        
+        private BeginOperationDelegate onBegin门店信息_GetNewCodeDelegate;
+        
+        private EndOperationDelegate onEnd门店信息_GetNewCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback on门店信息_GetNewCodeCompletedDelegate;
         
         private BeginOperationDelegate onBegin员工信息_GetListDelegate;
         
@@ -855,6 +1104,12 @@ namespace Client.BDKRWS {
         
         private System.Threading.SendOrPostCallback on员工信息_BatchImportCompletedDelegate;
         
+        private BeginOperationDelegate onBegin员工信息_GetNewCodeDelegate;
+        
+        private EndOperationDelegate onEnd员工信息_GetNewCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback on员工信息_GetNewCodeCompletedDelegate;
+        
         private BeginOperationDelegate onBegin工资表_GetListDelegate;
         
         private EndOperationDelegate onEnd工资表_GetListDelegate;
@@ -873,11 +1128,11 @@ namespace Client.BDKRWS {
         
         private System.Threading.SendOrPostCallback on仓库信息_GetListCompletedDelegate;
         
-        private BeginOperationDelegate onBegin仓库信息_CreateNewCodeDelegate;
+        private BeginOperationDelegate onBegin仓库信息_GetNewCodeDelegate;
         
-        private EndOperationDelegate onEnd仓库信息_CreateNewCodeDelegate;
+        private EndOperationDelegate onEnd仓库信息_GetNewCodeDelegate;
         
-        private System.Threading.SendOrPostCallback on仓库信息_CreateNewCodeCompletedDelegate;
+        private System.Threading.SendOrPostCallback on仓库信息_GetNewCodeCompletedDelegate;
         
         private BeginOperationDelegate onBegin仓库信息_UpdateDelegate;
         
@@ -963,6 +1218,18 @@ namespace Client.BDKRWS {
         
         private System.Threading.SendOrPostCallback on货品信息_UpdateCompletedDelegate;
         
+        private BeginOperationDelegate onBegin货品信息_DeleteDelegate;
+        
+        private EndOperationDelegate onEnd货品信息_DeleteDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品信息_DeleteCompletedDelegate;
+        
+        private BeginOperationDelegate onBegin货品信息_GetNewCodeDelegate;
+        
+        private EndOperationDelegate onEnd货品信息_GetNewCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品信息_GetNewCodeCompletedDelegate;
+        
         private BeginOperationDelegate onBegin菜品信息_GetListDelegate;
         
         private EndOperationDelegate onEnd菜品信息_GetListDelegate;
@@ -999,6 +1266,36 @@ namespace Client.BDKRWS {
         
         private System.Threading.SendOrPostCallback on库存信息_GetListCompletedDelegate;
         
+        private BeginOperationDelegate onBegin货品类别_GetListDelegate;
+        
+        private EndOperationDelegate onEnd货品类别_GetListDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品类别_GetListCompletedDelegate;
+        
+        private BeginOperationDelegate onBegin货品类别_GetNewCodeDelegate;
+        
+        private EndOperationDelegate onEnd货品类别_GetNewCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品类别_GetNewCodeCompletedDelegate;
+        
+        private BeginOperationDelegate onBegin货品类别_AddNewDelegate;
+        
+        private EndOperationDelegate onEnd货品类别_AddNewDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品类别_AddNewCompletedDelegate;
+        
+        private BeginOperationDelegate onBegin货品类别_UpdateDelegate;
+        
+        private EndOperationDelegate onEnd货品类别_UpdateDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品类别_UpdateCompletedDelegate;
+        
+        private BeginOperationDelegate onBegin货品类别_DeleteDelegate;
+        
+        private EndOperationDelegate onEnd货品类别_DeleteDelegate;
+        
+        private System.Threading.SendOrPostCallback on货品类别_DeleteCompletedDelegate;
+        
         public BDKRWSClient() {
         }
         
@@ -1026,6 +1323,8 @@ namespace Client.BDKRWS {
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> 门店信息_DeleteCompleted;
         
+        public event System.EventHandler<门店信息_GetNewCodeCompletedEventArgs> 门店信息_GetNewCodeCompleted;
+        
         public event System.EventHandler<员工信息_GetListCompletedEventArgs> 员工信息_GetListCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> 员工信息_AddNewCompleted;
@@ -1036,13 +1335,15 @@ namespace Client.BDKRWS {
         
         public event System.EventHandler<员工信息_BatchImportCompletedEventArgs> 员工信息_BatchImportCompleted;
         
+        public event System.EventHandler<员工信息_GetNewCodeCompletedEventArgs> 员工信息_GetNewCodeCompleted;
+        
         public event System.EventHandler<工资表_GetListCompletedEventArgs> 工资表_GetListCompleted;
         
         public event System.EventHandler<工资表_BatchUpdateCompletedEventArgs> 工资表_BatchUpdateCompleted;
         
         public event System.EventHandler<仓库信息_GetListCompletedEventArgs> 仓库信息_GetListCompleted;
         
-        public event System.EventHandler<仓库信息_CreateNewCodeCompletedEventArgs> 仓库信息_CreateNewCodeCompleted;
+        public event System.EventHandler<仓库信息_GetNewCodeCompletedEventArgs> 仓库信息_GetNewCodeCompleted;
         
         public event System.EventHandler<仓库信息_UpdateCompletedEventArgs> 仓库信息_UpdateCompleted;
         
@@ -1072,6 +1373,10 @@ namespace Client.BDKRWS {
         
         public event System.EventHandler<货品信息_UpdateCompletedEventArgs> 货品信息_UpdateCompleted;
         
+        public event System.EventHandler<货品信息_DeleteCompletedEventArgs> 货品信息_DeleteCompleted;
+        
+        public event System.EventHandler<货品信息_GetNewCodeCompletedEventArgs> 货品信息_GetNewCodeCompleted;
+        
         public event System.EventHandler<菜品信息_GetListCompletedEventArgs> 菜品信息_GetListCompleted;
         
         public event System.EventHandler<菜品信息_GetNewCodeCompletedEventArgs> 菜品信息_GetNewCodeCompleted;
@@ -1083,6 +1388,16 @@ namespace Client.BDKRWS {
         public event System.EventHandler<菜品信息_DeleteCompletedEventArgs> 菜品信息_DeleteCompleted;
         
         public event System.EventHandler<库存信息_GetListCompletedEventArgs> 库存信息_GetListCompleted;
+        
+        public event System.EventHandler<货品类别_GetListCompletedEventArgs> 货品类别_GetListCompleted;
+        
+        public event System.EventHandler<货品类别_GetNewCodeCompletedEventArgs> 货品类别_GetNewCodeCompleted;
+        
+        public event System.EventHandler<货品类别_AddNewCompletedEventArgs> 货品类别_AddNewCompleted;
+        
+        public event System.EventHandler<货品类别_UpdateCompletedEventArgs> 货品类别_UpdateCompleted;
+        
+        public event System.EventHandler<货品类别_DeleteCompletedEventArgs> 货品类别_DeleteCompleted;
         
         public System.Collections.Generic.List<DataAccess.门店ViewModel> 门店信息_GetList() {
             return base.Channel.门店信息_GetList();
@@ -1277,6 +1592,54 @@ namespace Client.BDKRWS {
             }
             base.InvokeAsync(this.onBegin门店信息_DeleteDelegate, new object[] {
                         门店编码}, this.onEnd门店信息_DeleteDelegate, this.on门店信息_DeleteCompletedDelegate, userState);
+        }
+        
+        public string 门店信息_GetNewCode() {
+            return base.Channel.门店信息_GetNewCode();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin门店信息_GetNewCode(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin门店信息_GetNewCode(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string End门店信息_GetNewCode(System.IAsyncResult result) {
+            return base.Channel.End门店信息_GetNewCode(result);
+        }
+        
+        private System.IAsyncResult OnBegin门店信息_GetNewCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.Begin门店信息_GetNewCode(callback, asyncState);
+        }
+        
+        private object[] OnEnd门店信息_GetNewCode(System.IAsyncResult result) {
+            string retVal = this.End门店信息_GetNewCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On门店信息_GetNewCodeCompleted(object state) {
+            if ((this.门店信息_GetNewCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.门店信息_GetNewCodeCompleted(this, new 门店信息_GetNewCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 门店信息_GetNewCodeAsync() {
+            this.门店信息_GetNewCodeAsync(null);
+        }
+        
+        public void 门店信息_GetNewCodeAsync(object userState) {
+            if ((this.onBegin门店信息_GetNewCodeDelegate == null)) {
+                this.onBegin门店信息_GetNewCodeDelegate = new BeginOperationDelegate(this.OnBegin门店信息_GetNewCode);
+            }
+            if ((this.onEnd门店信息_GetNewCodeDelegate == null)) {
+                this.onEnd门店信息_GetNewCodeDelegate = new EndOperationDelegate(this.OnEnd门店信息_GetNewCode);
+            }
+            if ((this.on门店信息_GetNewCodeCompletedDelegate == null)) {
+                this.on门店信息_GetNewCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.On门店信息_GetNewCodeCompleted);
+            }
+            base.InvokeAsync(this.onBegin门店信息_GetNewCodeDelegate, null, this.onEnd门店信息_GetNewCodeDelegate, this.on门店信息_GetNewCodeCompletedDelegate, userState);
         }
         
         public System.Collections.Generic.List<DataAccess.员工信息ViewModel> 员工信息_GetList(DataAccess.Filters.员工信息Filter filter) {
@@ -1526,6 +1889,54 @@ namespace Client.BDKRWS {
                         model}, this.onEnd员工信息_BatchImportDelegate, this.on员工信息_BatchImportCompletedDelegate, userState);
         }
         
+        public string 员工信息_GetNewCode() {
+            return base.Channel.员工信息_GetNewCode();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin员工信息_GetNewCode(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin员工信息_GetNewCode(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string End员工信息_GetNewCode(System.IAsyncResult result) {
+            return base.Channel.End员工信息_GetNewCode(result);
+        }
+        
+        private System.IAsyncResult OnBegin员工信息_GetNewCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.Begin员工信息_GetNewCode(callback, asyncState);
+        }
+        
+        private object[] OnEnd员工信息_GetNewCode(System.IAsyncResult result) {
+            string retVal = this.End员工信息_GetNewCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On员工信息_GetNewCodeCompleted(object state) {
+            if ((this.员工信息_GetNewCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.员工信息_GetNewCodeCompleted(this, new 员工信息_GetNewCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 员工信息_GetNewCodeAsync() {
+            this.员工信息_GetNewCodeAsync(null);
+        }
+        
+        public void 员工信息_GetNewCodeAsync(object userState) {
+            if ((this.onBegin员工信息_GetNewCodeDelegate == null)) {
+                this.onBegin员工信息_GetNewCodeDelegate = new BeginOperationDelegate(this.OnBegin员工信息_GetNewCode);
+            }
+            if ((this.onEnd员工信息_GetNewCodeDelegate == null)) {
+                this.onEnd员工信息_GetNewCodeDelegate = new EndOperationDelegate(this.OnEnd员工信息_GetNewCode);
+            }
+            if ((this.on员工信息_GetNewCodeCompletedDelegate == null)) {
+                this.on员工信息_GetNewCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.On员工信息_GetNewCodeCompleted);
+            }
+            base.InvokeAsync(this.onBegin员工信息_GetNewCodeDelegate, null, this.onEnd员工信息_GetNewCodeDelegate, this.on员工信息_GetNewCodeCompletedDelegate, userState);
+        }
+        
         public System.Collections.Generic.List<DataAccess.工资表ViewModel> 工资表_GetList(DataAccess.Filters.工资表Filter filter) {
             return base.Channel.工资表_GetList(filter);
         }
@@ -1676,52 +2087,52 @@ namespace Client.BDKRWS {
                         filter}, this.onEnd仓库信息_GetListDelegate, this.on仓库信息_GetListCompletedDelegate, userState);
         }
         
-        public string 仓库信息_CreateNewCode() {
-            return base.Channel.仓库信息_CreateNewCode();
+        public string 仓库信息_GetNewCode() {
+            return base.Channel.仓库信息_GetNewCode();
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult Begin仓库信息_CreateNewCode(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.Begin仓库信息_CreateNewCode(callback, asyncState);
+        public System.IAsyncResult Begin仓库信息_GetNewCode(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin仓库信息_GetNewCode(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string End仓库信息_CreateNewCode(System.IAsyncResult result) {
-            return base.Channel.End仓库信息_CreateNewCode(result);
+        public string End仓库信息_GetNewCode(System.IAsyncResult result) {
+            return base.Channel.End仓库信息_GetNewCode(result);
         }
         
-        private System.IAsyncResult OnBegin仓库信息_CreateNewCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.Begin仓库信息_CreateNewCode(callback, asyncState);
+        private System.IAsyncResult OnBegin仓库信息_GetNewCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.Begin仓库信息_GetNewCode(callback, asyncState);
         }
         
-        private object[] OnEnd仓库信息_CreateNewCode(System.IAsyncResult result) {
-            string retVal = this.End仓库信息_CreateNewCode(result);
+        private object[] OnEnd仓库信息_GetNewCode(System.IAsyncResult result) {
+            string retVal = this.End仓库信息_GetNewCode(result);
             return new object[] {
                     retVal};
         }
         
-        private void On仓库信息_CreateNewCodeCompleted(object state) {
-            if ((this.仓库信息_CreateNewCodeCompleted != null)) {
+        private void On仓库信息_GetNewCodeCompleted(object state) {
+            if ((this.仓库信息_GetNewCodeCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.仓库信息_CreateNewCodeCompleted(this, new 仓库信息_CreateNewCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.仓库信息_GetNewCodeCompleted(this, new 仓库信息_GetNewCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void 仓库信息_CreateNewCodeAsync() {
-            this.仓库信息_CreateNewCodeAsync(null);
+        public void 仓库信息_GetNewCodeAsync() {
+            this.仓库信息_GetNewCodeAsync(null);
         }
         
-        public void 仓库信息_CreateNewCodeAsync(object userState) {
-            if ((this.onBegin仓库信息_CreateNewCodeDelegate == null)) {
-                this.onBegin仓库信息_CreateNewCodeDelegate = new BeginOperationDelegate(this.OnBegin仓库信息_CreateNewCode);
+        public void 仓库信息_GetNewCodeAsync(object userState) {
+            if ((this.onBegin仓库信息_GetNewCodeDelegate == null)) {
+                this.onBegin仓库信息_GetNewCodeDelegate = new BeginOperationDelegate(this.OnBegin仓库信息_GetNewCode);
             }
-            if ((this.onEnd仓库信息_CreateNewCodeDelegate == null)) {
-                this.onEnd仓库信息_CreateNewCodeDelegate = new EndOperationDelegate(this.OnEnd仓库信息_CreateNewCode);
+            if ((this.onEnd仓库信息_GetNewCodeDelegate == null)) {
+                this.onEnd仓库信息_GetNewCodeDelegate = new EndOperationDelegate(this.OnEnd仓库信息_GetNewCode);
             }
-            if ((this.on仓库信息_CreateNewCodeCompletedDelegate == null)) {
-                this.on仓库信息_CreateNewCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.On仓库信息_CreateNewCodeCompleted);
+            if ((this.on仓库信息_GetNewCodeCompletedDelegate == null)) {
+                this.on仓库信息_GetNewCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.On仓库信息_GetNewCodeCompleted);
             }
-            base.InvokeAsync(this.onBegin仓库信息_CreateNewCodeDelegate, null, this.onEnd仓库信息_CreateNewCodeDelegate, this.on仓库信息_CreateNewCodeCompletedDelegate, userState);
+            base.InvokeAsync(this.onBegin仓库信息_GetNewCodeDelegate, null, this.onEnd仓库信息_GetNewCodeDelegate, this.on仓库信息_GetNewCodeCompletedDelegate, userState);
         }
         
         public int 仓库信息_Update(DataAccess.EditModels.仓库EditModel model) {
@@ -2424,6 +2835,104 @@ namespace Client.BDKRWS {
                         model}, this.onEnd货品信息_UpdateDelegate, this.on货品信息_UpdateCompletedDelegate, userState);
         }
         
+        public int 货品信息_Delete(string 货品信息编码) {
+            return base.Channel.货品信息_Delete(货品信息编码);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品信息_Delete(string 货品信息编码, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品信息_Delete(货品信息编码, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int End货品信息_Delete(System.IAsyncResult result) {
+            return base.Channel.End货品信息_Delete(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品信息_Delete(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string 货品信息编码 = ((string)(inValues[0]));
+            return this.Begin货品信息_Delete(货品信息编码, callback, asyncState);
+        }
+        
+        private object[] OnEnd货品信息_Delete(System.IAsyncResult result) {
+            int retVal = this.End货品信息_Delete(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品信息_DeleteCompleted(object state) {
+            if ((this.货品信息_DeleteCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品信息_DeleteCompleted(this, new 货品信息_DeleteCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品信息_DeleteAsync(string 货品信息编码) {
+            this.货品信息_DeleteAsync(货品信息编码, null);
+        }
+        
+        public void 货品信息_DeleteAsync(string 货品信息编码, object userState) {
+            if ((this.onBegin货品信息_DeleteDelegate == null)) {
+                this.onBegin货品信息_DeleteDelegate = new BeginOperationDelegate(this.OnBegin货品信息_Delete);
+            }
+            if ((this.onEnd货品信息_DeleteDelegate == null)) {
+                this.onEnd货品信息_DeleteDelegate = new EndOperationDelegate(this.OnEnd货品信息_Delete);
+            }
+            if ((this.on货品信息_DeleteCompletedDelegate == null)) {
+                this.on货品信息_DeleteCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品信息_DeleteCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品信息_DeleteDelegate, new object[] {
+                        货品信息编码}, this.onEnd货品信息_DeleteDelegate, this.on货品信息_DeleteCompletedDelegate, userState);
+        }
+        
+        public string 货品信息_GetNewCode() {
+            return base.Channel.货品信息_GetNewCode();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品信息_GetNewCode(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品信息_GetNewCode(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string End货品信息_GetNewCode(System.IAsyncResult result) {
+            return base.Channel.End货品信息_GetNewCode(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品信息_GetNewCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.Begin货品信息_GetNewCode(callback, asyncState);
+        }
+        
+        private object[] OnEnd货品信息_GetNewCode(System.IAsyncResult result) {
+            string retVal = this.End货品信息_GetNewCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品信息_GetNewCodeCompleted(object state) {
+            if ((this.货品信息_GetNewCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品信息_GetNewCodeCompleted(this, new 货品信息_GetNewCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品信息_GetNewCodeAsync() {
+            this.货品信息_GetNewCodeAsync(null);
+        }
+        
+        public void 货品信息_GetNewCodeAsync(object userState) {
+            if ((this.onBegin货品信息_GetNewCodeDelegate == null)) {
+                this.onBegin货品信息_GetNewCodeDelegate = new BeginOperationDelegate(this.OnBegin货品信息_GetNewCode);
+            }
+            if ((this.onEnd货品信息_GetNewCodeDelegate == null)) {
+                this.onEnd货品信息_GetNewCodeDelegate = new EndOperationDelegate(this.OnEnd货品信息_GetNewCode);
+            }
+            if ((this.on货品信息_GetNewCodeCompletedDelegate == null)) {
+                this.on货品信息_GetNewCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品信息_GetNewCodeCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品信息_GetNewCodeDelegate, null, this.onEnd货品信息_GetNewCodeDelegate, this.on货品信息_GetNewCodeCompletedDelegate, userState);
+        }
+        
         public System.Collections.Generic.List<DataAccess.菜品信息ViewModel> 菜品信息_GetList(DataAccess.Filters.菜品信息Filter filter) {
             return base.Channel.菜品信息_GetList(filter);
         }
@@ -2720,6 +3229,252 @@ namespace Client.BDKRWS {
             }
             base.InvokeAsync(this.onBegin库存信息_GetListDelegate, new object[] {
                         filter}, this.onEnd库存信息_GetListDelegate, this.on库存信息_GetListCompletedDelegate, userState);
+        }
+        
+        public System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel> 货品类别_GetList() {
+            return base.Channel.货品类别_GetList();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品类别_GetList(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品类别_GetList(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel> End货品类别_GetList(System.IAsyncResult result) {
+            return base.Channel.End货品类别_GetList(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品类别_GetList(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.Begin货品类别_GetList(callback, asyncState);
+        }
+        
+        private object[] OnEnd货品类别_GetList(System.IAsyncResult result) {
+            System.Collections.Generic.List<DataAccess.EditModels.货品类别ViewModel> retVal = this.End货品类别_GetList(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品类别_GetListCompleted(object state) {
+            if ((this.货品类别_GetListCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品类别_GetListCompleted(this, new 货品类别_GetListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品类别_GetListAsync() {
+            this.货品类别_GetListAsync(null);
+        }
+        
+        public void 货品类别_GetListAsync(object userState) {
+            if ((this.onBegin货品类别_GetListDelegate == null)) {
+                this.onBegin货品类别_GetListDelegate = new BeginOperationDelegate(this.OnBegin货品类别_GetList);
+            }
+            if ((this.onEnd货品类别_GetListDelegate == null)) {
+                this.onEnd货品类别_GetListDelegate = new EndOperationDelegate(this.OnEnd货品类别_GetList);
+            }
+            if ((this.on货品类别_GetListCompletedDelegate == null)) {
+                this.on货品类别_GetListCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品类别_GetListCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品类别_GetListDelegate, null, this.onEnd货品类别_GetListDelegate, this.on货品类别_GetListCompletedDelegate, userState);
+        }
+        
+        public string 货品类别_GetNewCode() {
+            return base.Channel.货品类别_GetNewCode();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品类别_GetNewCode(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品类别_GetNewCode(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string End货品类别_GetNewCode(System.IAsyncResult result) {
+            return base.Channel.End货品类别_GetNewCode(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品类别_GetNewCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.Begin货品类别_GetNewCode(callback, asyncState);
+        }
+        
+        private object[] OnEnd货品类别_GetNewCode(System.IAsyncResult result) {
+            string retVal = this.End货品类别_GetNewCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品类别_GetNewCodeCompleted(object state) {
+            if ((this.货品类别_GetNewCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品类别_GetNewCodeCompleted(this, new 货品类别_GetNewCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品类别_GetNewCodeAsync() {
+            this.货品类别_GetNewCodeAsync(null);
+        }
+        
+        public void 货品类别_GetNewCodeAsync(object userState) {
+            if ((this.onBegin货品类别_GetNewCodeDelegate == null)) {
+                this.onBegin货品类别_GetNewCodeDelegate = new BeginOperationDelegate(this.OnBegin货品类别_GetNewCode);
+            }
+            if ((this.onEnd货品类别_GetNewCodeDelegate == null)) {
+                this.onEnd货品类别_GetNewCodeDelegate = new EndOperationDelegate(this.OnEnd货品类别_GetNewCode);
+            }
+            if ((this.on货品类别_GetNewCodeCompletedDelegate == null)) {
+                this.on货品类别_GetNewCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品类别_GetNewCodeCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品类别_GetNewCodeDelegate, null, this.onEnd货品类别_GetNewCodeDelegate, this.on货品类别_GetNewCodeCompletedDelegate, userState);
+        }
+        
+        public int 货品类别_AddNew(DataAccess.EditModels.货品类别EditModel model) {
+            return base.Channel.货品类别_AddNew(model);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品类别_AddNew(DataAccess.EditModels.货品类别EditModel model, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品类别_AddNew(model, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int End货品类别_AddNew(System.IAsyncResult result) {
+            return base.Channel.End货品类别_AddNew(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品类别_AddNew(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            DataAccess.EditModels.货品类别EditModel model = ((DataAccess.EditModels.货品类别EditModel)(inValues[0]));
+            return this.Begin货品类别_AddNew(model, callback, asyncState);
+        }
+        
+        private object[] OnEnd货品类别_AddNew(System.IAsyncResult result) {
+            int retVal = this.End货品类别_AddNew(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品类别_AddNewCompleted(object state) {
+            if ((this.货品类别_AddNewCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品类别_AddNewCompleted(this, new 货品类别_AddNewCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品类别_AddNewAsync(DataAccess.EditModels.货品类别EditModel model) {
+            this.货品类别_AddNewAsync(model, null);
+        }
+        
+        public void 货品类别_AddNewAsync(DataAccess.EditModels.货品类别EditModel model, object userState) {
+            if ((this.onBegin货品类别_AddNewDelegate == null)) {
+                this.onBegin货品类别_AddNewDelegate = new BeginOperationDelegate(this.OnBegin货品类别_AddNew);
+            }
+            if ((this.onEnd货品类别_AddNewDelegate == null)) {
+                this.onEnd货品类别_AddNewDelegate = new EndOperationDelegate(this.OnEnd货品类别_AddNew);
+            }
+            if ((this.on货品类别_AddNewCompletedDelegate == null)) {
+                this.on货品类别_AddNewCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品类别_AddNewCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品类别_AddNewDelegate, new object[] {
+                        model}, this.onEnd货品类别_AddNewDelegate, this.on货品类别_AddNewCompletedDelegate, userState);
+        }
+        
+        public int 货品类别_Update(DataAccess.EditModels.货品类别EditModel model) {
+            return base.Channel.货品类别_Update(model);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品类别_Update(DataAccess.EditModels.货品类别EditModel model, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品类别_Update(model, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int End货品类别_Update(System.IAsyncResult result) {
+            return base.Channel.End货品类别_Update(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品类别_Update(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            DataAccess.EditModels.货品类别EditModel model = ((DataAccess.EditModels.货品类别EditModel)(inValues[0]));
+            return this.Begin货品类别_Update(model, callback, asyncState);
+        }
+        
+        private object[] OnEnd货品类别_Update(System.IAsyncResult result) {
+            int retVal = this.End货品类别_Update(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品类别_UpdateCompleted(object state) {
+            if ((this.货品类别_UpdateCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品类别_UpdateCompleted(this, new 货品类别_UpdateCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品类别_UpdateAsync(DataAccess.EditModels.货品类别EditModel model) {
+            this.货品类别_UpdateAsync(model, null);
+        }
+        
+        public void 货品类别_UpdateAsync(DataAccess.EditModels.货品类别EditModel model, object userState) {
+            if ((this.onBegin货品类别_UpdateDelegate == null)) {
+                this.onBegin货品类别_UpdateDelegate = new BeginOperationDelegate(this.OnBegin货品类别_Update);
+            }
+            if ((this.onEnd货品类别_UpdateDelegate == null)) {
+                this.onEnd货品类别_UpdateDelegate = new EndOperationDelegate(this.OnEnd货品类别_Update);
+            }
+            if ((this.on货品类别_UpdateCompletedDelegate == null)) {
+                this.on货品类别_UpdateCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品类别_UpdateCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品类别_UpdateDelegate, new object[] {
+                        model}, this.onEnd货品类别_UpdateDelegate, this.on货品类别_UpdateCompletedDelegate, userState);
+        }
+        
+        public int 货品类别_Delete(string 货品类别编码) {
+            return base.Channel.货品类别_Delete(货品类别编码);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begin货品类别_Delete(string 货品类别编码, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begin货品类别_Delete(货品类别编码, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int End货品类别_Delete(System.IAsyncResult result) {
+            return base.Channel.End货品类别_Delete(result);
+        }
+        
+        private System.IAsyncResult OnBegin货品类别_Delete(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string 货品类别编码 = ((string)(inValues[0]));
+            return this.Begin货品类别_Delete(货品类别编码, callback, asyncState);
+        }
+        
+        private object[] OnEnd货品类别_Delete(System.IAsyncResult result) {
+            int retVal = this.End货品类别_Delete(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void On货品类别_DeleteCompleted(object state) {
+            if ((this.货品类别_DeleteCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.货品类别_DeleteCompleted(this, new 货品类别_DeleteCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void 货品类别_DeleteAsync(string 货品类别编码) {
+            this.货品类别_DeleteAsync(货品类别编码, null);
+        }
+        
+        public void 货品类别_DeleteAsync(string 货品类别编码, object userState) {
+            if ((this.onBegin货品类别_DeleteDelegate == null)) {
+                this.onBegin货品类别_DeleteDelegate = new BeginOperationDelegate(this.OnBegin货品类别_Delete);
+            }
+            if ((this.onEnd货品类别_DeleteDelegate == null)) {
+                this.onEnd货品类别_DeleteDelegate = new EndOperationDelegate(this.OnEnd货品类别_Delete);
+            }
+            if ((this.on货品类别_DeleteCompletedDelegate == null)) {
+                this.on货品类别_DeleteCompletedDelegate = new System.Threading.SendOrPostCallback(this.On货品类别_DeleteCompleted);
+            }
+            base.InvokeAsync(this.onBegin货品类别_DeleteDelegate, new object[] {
+                        货品类别编码}, this.onEnd货品类别_DeleteDelegate, this.on货品类别_DeleteCompletedDelegate, userState);
         }
     }
 }
