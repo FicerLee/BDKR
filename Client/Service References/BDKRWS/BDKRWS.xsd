@@ -225,6 +225,7 @@
       <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="菜品名称" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="菜品类别" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="菜品信息ViewModel" nillable="true" type="tns:菜品信息ViewModel" />
@@ -236,7 +237,7 @@
   <xs:element name="ArrayOfBOMViewModel" nillable="true" type="tns:ArrayOfBOMViewModel" />
   <xs:complexType name="BOMViewModel">
     <xs:sequence>
-      <xs:element minOccurs="0" name="单份数量" type="xs:int" />
+      <xs:element minOccurs="0" name="单份数量" type="xs:decimal" />
       <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="原材料" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="成本价" type="xs:decimal" />
@@ -257,6 +258,7 @@
       <xs:element minOccurs="0" name="单位" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="规格" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品信息编码" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="货品名称" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

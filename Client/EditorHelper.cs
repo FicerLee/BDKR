@@ -31,6 +31,15 @@ namespace Client
             properties.DisplayMember = "门店名称";
         }
 
+        internal static DialogResult EditForm(门店EditModel model, Form form)
+        {
+            using (var f = new 门店信息EditForm(model))
+            {
+                f.Text = model.Action.ToString();
+                return f.ShowDialog(form);
+            }
+        }
+
         internal static void LookUpEdit_货品类别(RepositoryItemLookUpEdit properties)
         {
             var list = 货品类别Logic.GetList();
@@ -58,6 +67,10 @@ namespace Client
             properties.DisplayMember = "类别名称";
         }
 
+        internal static DialogResult Confirm(string message, string caption)
+        {
+            return XtraMessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+        }
 
         internal static DialogResult EditForm(仓库EditModel model)
         {

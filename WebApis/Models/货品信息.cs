@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using DataAccess;
+using DataAccess.EditModels;
 
 namespace WebApis.Models
 {
@@ -68,6 +69,20 @@ namespace WebApis.Models
                 菜品名称 = 名称,
                 菜品类别 = 货品类别.名称,
                 规格 = 规格
+            };
+        }
+
+        internal 货品信息EditModel ConvertToEditModel()
+        {
+            var _cj = 采购价格表List == null ? 0 : 采购价格表List.OrderByDescending(t => t.创建时间).Select(t => t.价格).FirstOrDefault();
+            return new 货品信息EditModel
+            {
+                单位 = 单位,
+                编码 = 编码,
+                规格型号 = 规格,
+                货品名称 = 名称,
+                货品类别 = 货品类别.名称,
+                货品采购成本价 = _cj
             };
         }
     }

@@ -125,4 +125,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="货品类别EditModel" nillable="true" type="tns:货品类别EditModel" />
+  <xs:complexType name="采购价格EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="当前采购成本价" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品信息编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="采购价格EditModel" nillable="true" type="tns:采购价格EditModel" />
+  <xs:complexType name="销售价格EditModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="当前销售价格" type="xs:decimal" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品信息编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="销售价格EditModel" nillable="true" type="tns:销售价格EditModel" />
+  <xs:complexType name="货品BOMEditModel">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="Details" nillable="true" type="q4:ArrayOfBOMDetailViewModel" />
+      <xs:element minOccurs="0" name="编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="货品信息编码" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="过期时间" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="附加说明" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="货品BOMEditModel" nillable="true" type="tns:货品BOMEditModel" />
 </xs:schema>

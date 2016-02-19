@@ -24,9 +24,11 @@ namespace WebApis
         [OperationContract]
         void 门店信息_Update(门店EditModel model);
         [OperationContract]
-        void 门店信息_Delete(string 门店编码);
+        int 门店信息_Delete(string 门店编码);
         [OperationContract]
         string 门店信息_GetNewCode();
+        [OperationContract]
+        门店EditModel 门店信息_GetEditModelById(string 门店信息编码);
 
         #endregion
 
@@ -43,6 +45,8 @@ namespace WebApis
         int 员工信息_BatchImport(员工信息EditModel model);
         [OperationContract]
         string 员工信息_GetNewCode();
+        [OperationContract]
+        员工信息EditModel 员工信息_GetEditModelById(string 员工信息编码);
         #endregion
 
         #region 工资单
@@ -63,6 +67,8 @@ namespace WebApis
         int 仓库信息_AddNew(仓库EditModel model);
         [OperationContract]
         int 仓库信息_Delete(string 仓库信息编码);
+        [OperationContract]
+        仓库EditModel 仓库信息_GetEditModelById(string 仓库信息编码);
         #endregion
 
         #region 流水账清单
@@ -104,6 +110,8 @@ namespace WebApis
         int 货品信息_Delete(string 货品信息编码);
         [OperationContract]
         string 货品信息_GetNewCode();
+        [OperationContract]
+        货品信息EditModel 货品信息_GetEditModelById(string 货品信息编码);
         #endregion
 
         #region 菜品信息
@@ -159,7 +167,7 @@ namespace WebApis
         [OperationContract]
         string 货品BOM_GetNewCode();
         [OperationContract]
-        int 货品BOM_AddNew(货品BOMEditModel model);
+        void 货品BOM_AddNew(货品BOMEditModel model);
         #endregion
 
     }

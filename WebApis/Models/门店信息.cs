@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using DataAccess.EditModels;
 
 namespace WebApis.Models
 {
@@ -35,6 +36,19 @@ namespace WebApis.Models
                 联系电话 = 联系电话,
                 门店名称 = 名称,
                 门店地址 = 地址
+            };
+        }
+
+        internal 门店EditModel ConvertToEditModel()
+        {
+            return new 门店EditModel
+            {
+                店长 = 店长,
+                编码 = 编码,
+                联系电话 = 联系电话,
+                门店名称 = 名称,
+                门店地址 = 地址,
+                附加说明 = 备注
             };
         }
     }

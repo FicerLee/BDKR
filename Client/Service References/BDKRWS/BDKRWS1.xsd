@@ -48,7 +48,9 @@
   </xs:element>
   <xs:element name="门店信息_DeleteResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="门店信息_DeleteResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="门店信息_GetNewCode">
@@ -63,24 +65,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="门店信息_GetEditModelById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="门店信息编码" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="门店信息_GetEditModelByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="门店信息_GetEditModelByIdResult" nillable="true" type="q4:门店EditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="员工信息_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q4:员工信息Filter" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q5:员工信息Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="员工信息_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="员工信息_GetListResult" nillable="true" type="q5:ArrayOf员工信息ViewModel" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="员工信息_GetListResult" nillable="true" type="q6:ArrayOf员工信息ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="员工信息_AddNew">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q6:员工信息EditModel" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q7:员工信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -92,7 +108,7 @@
   <xs:element name="员工信息_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q7:员工信息EditModel" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q8:员工信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -116,7 +132,7 @@
   <xs:element name="员工信息_BatchImport">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q8:员工信息EditModel" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q9:员工信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -139,24 +155,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="员工信息_GetEditModelById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="员工信息编码" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="员工信息_GetEditModelByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="员工信息_GetEditModelByIdResult" nillable="true" type="q10:员工信息EditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="工资表_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q9:工资表Filter" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q11:工资表Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="工资表_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="工资表_GetListResult" nillable="true" type="q10:ArrayOf工资表ViewModel" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="工资表_GetListResult" nillable="true" type="q12:ArrayOf工资表ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="工资表_BatchUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="list" nillable="true" type="q11:ArrayOf工资表ViewModel" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="list" nillable="true" type="q13:ArrayOf工资表ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -170,14 +200,14 @@
   <xs:element name="仓库信息_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q12:仓库Filter" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q14:仓库Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="仓库信息_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="仓库信息_GetListResult" nillable="true" type="q13:ArrayOf仓库ViewModel" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="仓库信息_GetListResult" nillable="true" type="q15:ArrayOf仓库ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -196,7 +226,7 @@
   <xs:element name="仓库信息_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q14:仓库EditModel" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q16:仓库EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -210,7 +240,7 @@
   <xs:element name="仓库信息_AddNew">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q15:仓库EditModel" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q17:仓库EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -235,24 +265,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="仓库信息_GetEditModelById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="仓库信息编码" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="仓库信息_GetEditModelByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="仓库信息_GetEditModelByIdResult" nillable="true" type="q18:仓库EditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="流水账明细清单_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q16:流水账明细Filter" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q19:流水账明细Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="流水账明细清单_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="流水账明细清单_GetListResult" nillable="true" type="q17:ArrayOf流水账明细清单ViewModel" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="流水账明细清单_GetListResult" nillable="true" type="q20:ArrayOf流水账明细清单ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="流水账明细清单_BatchUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q18:流水账清单EditModel" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q21:流水账清单EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -266,21 +310,21 @@
   <xs:element name="费用汇总明细表_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q19:费用汇总表Filter" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q22:费用汇总表Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="费用汇总明细表_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="费用汇总明细表_GetListResult" nillable="true" type="q20:ArrayOf费用汇总明细表ViewModel" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="费用汇总明细表_GetListResult" nillable="true" type="q23:ArrayOf费用汇总明细表ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="费用汇总明细表_BatchUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q21:ArrayOf费用汇总表EditModel" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q24:ArrayOf费用汇总表EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -294,21 +338,21 @@
   <xs:element name="日常费用_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q22:日常费用Filter" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q25:日常费用Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="日常费用_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="日常费用_GetListResult" nillable="true" type="q23:ArrayOf日常费用ViewModel" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="日常费用_GetListResult" nillable="true" type="q26:ArrayOf日常费用ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="日常费用_BatchUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="models" nillable="true" type="q24:ArrayOf日常费用ViewModel" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="models" nillable="true" type="q27:ArrayOf日常费用ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -322,21 +366,21 @@
   <xs:element name="损益表_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q25:损益表Filter" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q28:损益表Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="损益表_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="损益表_GetListResult" nillable="true" type="q26:ArrayOf损益表ViewModel" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="损益表_GetListResult" nillable="true" type="q29:ArrayOf损益表ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="损益表_BatchUpdate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="models" nillable="true" type="q27:ArrayOf损益表ViewModel" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="models" nillable="true" type="q30:ArrayOf损益表ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -350,21 +394,21 @@
   <xs:element name="货品信息_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q28:货品信息Filter" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q31:货品信息Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="货品信息_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="货品信息_GetListResult" nillable="true" type="q29:ArrayOf货品信息ViewModel" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="货品信息_GetListResult" nillable="true" type="q32:ArrayOf货品信息ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="货品信息_AddNew">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q30:货品信息EditModel" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q33:货品信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -378,7 +422,7 @@
   <xs:element name="货品信息_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q31:货品信息EditModel" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q34:货品信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -415,17 +459,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="货品信息_GetEditModelById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="货品信息编码" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="货品信息_GetEditModelByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="货品信息_GetEditModelByIdResult" nillable="true" type="q35:货品信息EditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="菜品信息_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q32:菜品信息Filter" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q36:菜品信息Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="菜品信息_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="菜品信息_GetListResult" nillable="true" type="q33:ArrayOf菜品信息ViewModel" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="菜品信息_GetListResult" nillable="true" type="q37:ArrayOf菜品信息ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -444,7 +502,7 @@
   <xs:element name="菜品信息_AddNew">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q34:菜品信息EditModel" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q38:菜品信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -458,7 +516,7 @@
   <xs:element name="菜品信息_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q35:菜品信息EditModel" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q39:菜品信息EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -486,14 +544,14 @@
   <xs:element name="库存信息_GetList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q36:库存信息Filter" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DataAccess.Filters" minOccurs="0" name="filter" nillable="true" type="q40:库存信息Filter" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="库存信息_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="库存信息_GetListResult" nillable="true" type="q37:ArrayOf库存信息ViewModel" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="库存信息_GetListResult" nillable="true" type="q41:ArrayOf库存信息ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -505,7 +563,7 @@
   <xs:element name="货品类别_GetListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="货品类别_GetListResult" nillable="true" type="q38:ArrayOf货品类别ViewModel" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="货品类别_GetListResult" nillable="true" type="q42:ArrayOf货品类别ViewModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -524,7 +582,7 @@
   <xs:element name="货品类别_AddNew">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q39:货品类别EditModel" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q43:货品类别EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -538,7 +596,7 @@
   <xs:element name="货品类别_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q40:货品类别EditModel" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q44:货品类别EditModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -561,6 +619,82 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="货品类别_DeleteResult" type="xs:int" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="采购价格_AddNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q45:采购价格EditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="采购价格_AddNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="采购价格_AddNewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="采购价格_GetNewCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="采购价格_GetNewCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="采购价格_GetNewCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="销售价格_AddNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q46:销售价格EditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="销售价格_AddNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="销售价格_AddNewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="销售价格_GetNewCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="销售价格_GetNewCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="销售价格_GetNewCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="货品BOM_GetNewCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="货品BOM_GetNewCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="货品BOM_GetNewCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="货品BOM_AddNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DataAccess.EditModels" minOccurs="0" name="model" nillable="true" type="q47:货品BOMEditModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="货品BOM_AddNewResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

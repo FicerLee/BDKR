@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using DataAccess;
+using DataAccess.EditModels;
 
 namespace WebApis.Models
 {
@@ -35,6 +36,19 @@ namespace WebApis.Models
                 制品缓冲库 = 制品缓冲库,
                 编码 = 编码,
                 门店名称 = 门店信息.名称
+            };
+        }
+
+        internal 仓库EditModel ConvertToEditModel()
+        {
+            return new 仓库EditModel
+            {
+                仓库名称 = 仓库名称,
+                制品缓冲库 = 制品缓冲库,
+                类别编码 = 仓库类别编码,
+                编码 = 编码,
+                门店编码 = 门店信息编码,
+                附加说明 = 附件说明
             };
         }
     }

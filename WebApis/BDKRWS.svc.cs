@@ -17,50 +17,9 @@ namespace WebApis
     // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 BDKRWS.svc 或 BDKRWS.svc.cs，然后开始调试。
     public class BDKRWS : IBDKRWS
     {
-        public int 仓库信息_AddNew(仓库EditModel model)
-        {
-            throw new NotImplementedException();
-        }
+
 
         #region 仓库信息
-
-        public string 仓库信息_GetNewCode()
-        {
-            using (var context = new BDKRContext())
-            {
-                var rep = new Repository<仓库信息>(context);
-                var maxcode = rep.Max<string>(t => t.编码, t => t.编码.StartsWith("C")) ?? "C00";
-                var _max = int.Parse(maxcode.Substring(1));
-                return string.Format("C{0}", (_max + 1).ToString("00"));
-            }
-        }
-
-        public int 仓库信息_Delete(string 仓库信息编码)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<仓库ViewModel> 仓库信息_GetList(仓库Filter filter)
-        {
-            using (var context = new BDKRContext())
-            {
-                var rep = new Repository<仓库信息>(context);
-                return rep.GetList<仓库ViewModel>(t => t.ConvertToViewModel(), t =>
-                   {
-                       if (filter != null)
-                       {
-                           if (filter.关键词.Length > 0 && !filter.关键词.Contains(t.仓库名称)) return false;
-                       }
-                       return true;
-                   });
-            }
-        }
-
-        public int 仓库信息_Update(仓库EditModel model)
-        {
-            throw new NotImplementedException();
-        }
-
 
 
         public int 工资表_BatchUpdate(List<工资表ViewModel> list)
@@ -163,7 +122,7 @@ namespace WebApis
             }
         }
 
-        public void 门店信息_Delete(string 门店编码)
+        public int 门店信息_Delete(string 门店编码)
         {
             using (var context = new BDKRContext())
             {
@@ -189,7 +148,7 @@ namespace WebApis
                     throw new Exception("门店所属采购进货单存在");
                 if (e.餐厅损益表List != null && e.餐厅损益表List.Count > 0)
                     throw new Exception("门店所属餐厅损益表存在");
-                r.Remove(e, t => t.编码 == 门店编码);
+                return r.Remove(e, t => t.编码 == 门店编码);
             }
         }
 
@@ -205,34 +164,19 @@ namespace WebApis
             }
         }
 
-        public int 货品信息_Delete(string 货品信息编码)
+        public 门店EditModel 门店信息_GetEditModelById(string 门店信息编码)
         {
             using (var context = new BDKRContext())
             {
-                var r = new Repository<货品信息>(context);
-                var e = r.GetSingle(t => t.编码 == 货品信息编码);
-                if (null == e)
-                    throw new Exception("货品信息并不存在");
-                if (e.实时库存List != null && e.实时库存List.Count > 0)
-                    throw new Exception("实时库存存在此货品信息");
-                if (e.货品BOMList != null && e.货品BOMList.Count > 0)
-                    throw new Exception("货品BOM中存在此货品信息");
-                if (e.采购进货单明细List != null && e.采购进货单明细List.Count > 0)
-                    throw new Exception("采购进货单明细中存在此货品信息");
-                return r.Remove(e, t => t.编码 == 货品信息编码);
+                var r = new Repository<门店信息>(context);
+                var e = r.GetSingle(t => t.编码 == 门店信息编码);
+                if (null != e)
+                    return e.ConvertToEditModel();
+                return null;
             }
         }
 
-        public string 货品信息_GetNewCode()
-        {
-            using (var context = new BDKRContext())
-            {
-                var rep = new Repository<货品信息>(context);
-                var maxcode = rep.Max<string>(t => t.编码, t => t.编码.StartsWith("HP")) ?? "HP0000";
-                var _max = int.Parse(maxcode.Substring(2));
-                return string.Format("HP{0}", (_max + 1).ToString("0000"));
-            }
-        }
+
 
 
 
@@ -359,6 +303,47 @@ namespace WebApis
         {
             throw new NotImplementedException();
         }
+
+        public int 货品信息_Delete(string 货品信息编码)
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<货品信息>(context);
+                var e = r.GetSingle(t => t.编码 == 货品信息编码);
+                if (null == e)
+                    throw new Exception("货品信息并不存在");
+                if (e.实时库存List != null && e.实时库存List.Count > 0)
+                    throw new Exception("实时库存存在此货品信息");
+                if (e.货品BOMList != null && e.货品BOMList.Count > 0)
+                    throw new Exception("货品BOM中存在此货品信息");
+                if (e.采购进货单明细List != null && e.采购进货单明细List.Count > 0)
+                    throw new Exception("采购进货单明细中存在此货品信息");
+                return r.Remove(e, t => t.编码 == 货品信息编码);
+            }
+        }
+
+        public string 货品信息_GetNewCode()
+        {
+            using (var context = new BDKRContext())
+            {
+                var rep = new Repository<货品信息>(context);
+                var maxcode = rep.Max<string>(t => t.编码, t => t.编码.StartsWith("HP")) ?? "HP0000";
+                var _max = int.Parse(maxcode.Substring(2));
+                return string.Format("HP{0}", (_max + 1).ToString("0000"));
+            }
+        }
+
+        public 货品信息EditModel 货品信息_GetEditModelById(string 货品信息编码)
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<货品信息>(context);
+                var e = r.GetSingle(t => t.编码 == 货品信息编码);
+                if (null != e)
+                    return e.ConvertToEditModel();
+                return null;
+            }
+        }
         #endregion
 
         #region 员工信息
@@ -462,6 +447,18 @@ namespace WebApis
                 e.门店编码 = model.门店编码;
                 e.附加说明 = model.附加说明;
                 r.Edit(e, t => t.编码 == model.编码);
+            }
+        }
+
+        public 员工信息EditModel 员工信息_GetEditModelById(string 员工信息编码)
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<员工信息>(context);
+                var e = r.GetSingle(t => t.编码 == 员工信息编码);
+                if (null != e)
+                    return e.ConvertToEditModel();
+                return null;
             }
         }
         #endregion
@@ -636,13 +633,159 @@ namespace WebApis
         #region 货品BOM
         public string 货品BOM_GetNewCode()
         {
-            throw new NotImplementedException();
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<货品BOM>(context);
+                var maxcode = r.Max<string>(t => t.编码, t => t.编码.StartsWith("BM0000")) ?? "BM0000";
+                return "BM" + (int.Parse(maxcode.Substring(2)) + 1).ToString("0000");
+            }
         }
 
-        public int 货品BOM_AddNew(货品BOMEditModel model)
+        public void 货品BOM_AddNew(货品BOMEditModel model)
         {
-            throw new NotImplementedException();
+            using (var trans = new TransactionScope(TransactionScopeOption.Required))
+            {
+                using (var context = new BDKRContext())
+                {
+                    var bom = new 货品BOM
+                    {
+                        备注 = model.附加说明,
+                        更新时间 = DateTime.Now,
+                        编码 = model.编码,
+                        货品信息编码 = model.货品信息编码,
+                        过期时间 = null
+                    };
+                    context.货品BOMS.Add(bom);
+                    context.SaveChanges();
+                    if (model.Details != null && model.Details.Count > 0)
+                    {
+                        model.Details.ForEach(t =>
+                        {
+                            var _n = new 货品BOM明细
+                            {
+                                单份数量 = t.单份数量,
+                                单位 = t.单位,
+                                编码 = 货品BOM明细_GetNewCode(),
+                                货品BOM编码 = model.编码,
+                                货品信息编码 = t.货品信息编码
+                            };
+                            context.货品BOM明细S.Add(_n);
+                            context.SaveChanges();
+                        });
+                    }
+                }
+                trans.Complete();
+            }
+
         }
+
+        public string 货品BOM明细_GetNewCode()
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<货品BOM明细>(context);
+                var maxcode = r.Max<string>(t => t.编码, t => t.编码.StartsWith("BMD0000")) ?? "BMD0000";
+                return "BMD" + (int.Parse(maxcode.Substring(3)) + 1).ToString("0000");
+            }
+        }
+        #endregion
+
+        #region 仓库信息
+        public string 仓库信息_GetNewCode()
+        {
+            using (var context = new BDKRContext())
+            {
+                var rep = new Repository<仓库信息>(context);
+                var maxcode = rep.Max<string>(t => t.编码, t => t.编码.StartsWith("C")) ?? "C00";
+                var _max = int.Parse(maxcode.Substring(1));
+                return string.Format("C{0}", (_max + 1).ToString("00"));
+            }
+        }
+
+        public int 仓库信息_AddNew(仓库EditModel model)
+        {
+            using (var context = new BDKRContext())
+            {
+                var n = new 仓库信息
+                {
+                    仓库名称 = model.仓库名称,
+                    仓库类别编码 = model.类别编码,
+                    制品缓冲库 = model.制品缓冲库,
+                    编码 = model.编码,
+                    门店信息编码 = model.门店编码,
+                    附件说明 = model.附加说明
+                };
+                context.仓库信息S.Add(n);
+                return context.SaveChanges();
+            }
+        }
+
+        public int 仓库信息_Update(仓库EditModel model)
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<仓库信息>(context);
+                var e = r.GetSingle(t => t.编码 == model.编码);
+                if (null == e)
+                    throw new Exception("该仓库信息并不存在");
+                e.仓库名称 = model.仓库名称;
+                e.仓库类别编码 = model.类别编码;
+                e.制品缓冲库 = model.制品缓冲库;
+                //e.门店信息编码 = model.门店编码;
+                e.附件说明 = model.附加说明;
+                return r.Edit(e);
+            }
+        }
+
+        public int 仓库信息_Delete(string 仓库信息编码)
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<仓库信息>(context);
+                var e = r.GetSingle(t => t.编码 == 仓库信息编码);
+                if (null == e)
+                    throw new Exception("仓库信息并不存在");
+                if (e.实时库存明细List != null && e.实时库存明细List.Count > 0)
+                    throw new Exception("实时库存中含有此仓库信息,无法删除!");
+                if (e.采购进货单明细List != null && e.采购进货单明细List.Count > 0)
+                    throw new Exception("采购进货单明细中含有此仓库信息,无法删除!");
+                return r.Remove(e);
+            }
+        }
+
+        public List<仓库ViewModel> 仓库信息_GetList(仓库Filter filter)
+        {
+            using (var context = new BDKRContext())
+            {
+                var rep = new Repository<仓库信息>(context);
+                return rep.GetList<仓库ViewModel>(t => t.ConvertToViewModel(), t =>
+                {
+                    if (filter != null)
+                    {
+                        if (filter.关键词.Length > 0 && !filter.关键词.Contains(t.仓库名称)) return false;
+                    }
+                    return true;
+                });
+            }
+        }
+
+        public 仓库EditModel 仓库信息_GetEditModelById(string 仓库信息编码)
+        {
+            using (var context = new BDKRContext())
+            {
+                var r = new Repository<仓库信息>(context);
+                var e = r.GetSingle(t => t.编码 == 仓库信息编码);
+                if (null != e)
+                    return e.ConvertToEditModel();
+                return null;
+            }
+        }
+
+
+
+
+
+
         #endregion
     }
 }

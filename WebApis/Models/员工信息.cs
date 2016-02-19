@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using DataAccess;
+using DataAccess.EditModels;
 
 namespace WebApis.Models
 {
@@ -33,6 +34,23 @@ namespace WebApis.Models
                 工号 = 工号,
                 编码 = 编码,
                 联系方式 = 联系电话,
+                身份证号 = 身份证号,
+                门店编码 = 门店编码,
+                附加说明 = 附加说明
+            };
+        }
+
+        internal 员工信息EditModel ConvertToEditModel()
+        {
+            return new 员工信息EditModel
+            {
+                入职日期 = 入职日期,
+                员工姓名 = 姓名,
+                工号 = 工号,
+                当前基本工资 = 当前基本工资,
+                编码 = 编码,
+                职位 = 职位,
+                联系电话 = 联系电话,
                 身份证号 = 身份证号,
                 门店编码 = 门店编码,
                 附加说明 = 附加说明

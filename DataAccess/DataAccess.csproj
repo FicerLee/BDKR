@@ -62,6 +62,7 @@
     <Compile Include="EditModels\员工信息EditModel.cs" />
     <Compile Include="EditModels\流水账清单EditModel.cs" />
     <Compile Include="EditModels\菜品信息EditModel.cs" />
+    <Compile Include="EditModels\货品BOMEditModel.cs" />
     <Compile Include="EditModels\采购价格EditModel.cs" />
     <Compile Include="EditModels\货品信息EditModel.cs" />
     <Compile Include="EditModels\货品类别EditModel.cs" />

@@ -139,6 +139,10 @@
     <Compile Include="Migrations\201602150748372_bdkr.Designer.cs">
       <DependentUpon>201602150748372_bdkr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602190243295_bdkr1.cs" />
+    <Compile Include="Migrations\201602190243295_bdkr1.Designer.cs">
+      <DependentUpon>201602190243295_bdkr1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\仓库信息.cs" />
     <Compile Include="Models\仓库类别.cs" />
@@ -194,6 +198,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602150748372_bdkr.resx">
       <DependentUpon>201602150748372_bdkr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602190243295_bdkr1.resx">
+      <DependentUpon>201602190243295_bdkr1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
